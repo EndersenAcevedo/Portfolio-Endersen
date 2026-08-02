@@ -595,3 +595,51 @@ section {
   backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid var(--border) !important;
 }
+
+
+/* ── LINKS "PRÓXIMAMENTE" ── */
+.pf-link-soon,
+.caso-link-soon {
+  opacity: .55;
+  cursor: pointer;
+  position: relative;
+}
+.pf-link-soon:hover,
+.caso-link-soon:hover {
+  opacity: .8;
+}
+
+/* Toast de aviso */
+.soon-toast {
+  position: fixed;
+  z-index: 100000;
+  background: rgba(13,13,13,.97);
+  border: 1px solid rgba(255,69,0,.4);
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(255,69,0,.1);
+  opacity: 0;
+  transform: translateY(8px) scale(.96);
+  transition: opacity .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.soon-toast.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.soon-toast-icon {
+  color: var(--orange);
+  flex-shrink: 0;
+  display: flex;
+}
+.soon-toast svg {
+  color: var(--orange);
+  flex-shrink: 0;
+}
