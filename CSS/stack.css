@@ -1,0 +1,284 @@
+/* ═══════════════════════════════════════════
+   STACK — CSS
+   Depends on: styles.css (shared vars + nav)
+═══════════════════════════════════════════ */
+
+/* ── Section header ── */
+.stack-section {
+  padding: 110px 80px 60px;
+  min-height: 100vh;
+}
+
+.stack-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-label-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--border); border-radius: 20px;
+  padding: 7px 18px; font-size: 13px; color: var(--muted);
+}
+.section-label svg { color: var(--orange); }
+
+.stack-title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.stack-title span { color: var(--orange); }
+
+.stack-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── TABS ── */
+.stack-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.stab {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  border-radius: 28px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .22s ease;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.stab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,69,0,.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity .22s ease;
+}
+
+.stab:hover { color: var(--text); border-color: #555; }
+.stab:hover::before { opacity: 1; }
+
+.stab.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255,69,0,.35);
+}
+.stab.active::before { opacity: 0; }
+
+/* ── CARDS GRID ── */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Individual card */
+.sk-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 20px 18px;
+  position: relative;
+  cursor: default;
+  transition:
+    border-color .25s ease,
+    background .25s ease,
+    transform .22s ease,
+    box-shadow .25s ease;
+
+  /* hidden by default, shown by JS per category */
+  display: none;
+}
+
+.sk-card.visible {
+  display: block;
+  animation: card-in .3s ease both;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.sk-card:hover {
+  border-color: rgba(255,69,0,.5);
+  background: #1b1b1b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(255,69,0,.12);
+}
+
+/* Glow border sweep on hover */
+.sk-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(255,69,0,.4), transparent 50%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.sk-card:hover::after { opacity: 1; }
+
+/* Card top row */
+.sk-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.sk-icon {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.sk-card:hover .sk-icon {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 4px 16px rgba(0,0,0,.4);
+}
+
+.sk-name-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.sk-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Bar + percentage */
+.sk-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sk-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sk-bar-fill {
+  height: 100%;
+  width: 0;              /* starts at 0, animated by JS */
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--orange-dim), var(--orange));
+  transition: width 1s cubic-bezier(.4,0,.2,1);
+  position: relative;
+}
+
+/* Shimmer effect on bar fill */
+.sk-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; bottom: 0; width: 60%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+.sk-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  min-width: 32px;
+  text-align: right;
+  transition: color .25s;
+  display: none;  /* ← Oculta el porcentaje */
+}
+.sk-card:hover .sk-pct { color: var(--orange); }
+
+/* Description */
+.sk-desc {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  transition: color .25s;
+}
+.sk-card:hover .sk-desc { color: #aaa; }
+
+/* Tooltip on hover (shows "XX% dominio" as a floating badge) */
+.sk-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--orange);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 10;
+  display: none !important;
+}
+.sk-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%; transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--orange);
+}
+.sk-card:hover .sk-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .stack-section { padding: 100px 20px 40px; }
+  .stack-grid { grid-template-columns: 1fr; }
+  .stack-tabs { gap: 8px; }
+  .stab { padding: 8px 16px; font-size: 13px; }
+}

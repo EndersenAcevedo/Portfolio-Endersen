@@ -1,0 +1,306 @@
+/* ═══════════════════════════════════════════
+   SOBRE MÍ — CSS
+   Depends on: styles.css (shared vars + nav)
+═══════════════════════════════════════════ */
+
+/* ── Section label pill ── */
+.section-label-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--border); border-radius: 20px;
+  padding: 7px 18px; font-size: 13px; color: var(--muted);
+}
+.section-label svg { color: var(--orange); }
+
+/* ── Heading ── */
+.about-heading {
+  text-align: center;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  margin-bottom: 72px;
+}
+.about-heading span { color: var(--orange); }
+
+/* ── ABOUT SECTION ── */
+.about-section {
+  padding: 120px 80px 80px;
+}
+
+/* ── Two-column grid ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Photo card ── */
+.photo-col { position: relative; }
+
+.photo-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card);
+  aspect-ratio: 3/4;   /* más vertical — ideal para retrato */
+  max-width: 360px;
+}
+
+.photo-placeholder {
+  width: 100%; height: 100%;
+  position: relative;
+}
+.photo-placeholder img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top; /* centra horizontalmente, ancla arriba */
+  display: block;
+}
+.photo-fallback {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(160deg, #1a1a1a 0%, #0f0f0f 60%, rgba(255,69,0,.08) 100%);
+  color: var(--border);
+}
+
+/* gradient overlay at bottom */
+.photo-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 45%;
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* experience badge */
+.photo-badge {
+  position: absolute; bottom: 20px; right: 20px; z-index: 2;
+  background: rgba(20,20,20,.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.photo-badge-icon {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px; color: var(--orange);
+}
+.photo-badge-sub { font-size: 11px; color: var(--muted); }
+.photo-badge-val { font-size: 15px; font-weight: 800; color: var(--text); }
+
+/* ── Bio column ── */
+.bio-col { padding-top: 8px; }
+
+.bio-title {
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+.bio-title span { color: var(--orange); }
+
+.bio-text {
+  color: #b0b0b0;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  max-width: 620px;
+}
+
+/* ── Tech tags ── */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.tag {
+  display: inline-block;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: default;
+  transition:
+    color .22s ease,
+    border-color .22s ease,
+    background .22s ease,
+    transform .18s ease,
+    box-shadow .22s ease;
+  user-select: none;
+}
+
+.tag:hover {
+  color: var(--orange);
+  border-color: var(--orange);
+  background: rgba(255, 69, 0, 0.07);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(255, 69, 0, 0.18);
+}
+
+/* ═══════════════════════════════════════════
+   TIMELINE — MI RECORRIDO
+═══════════════════════════════════════════ */
+.timeline-section {
+  padding: 80px 80px 60px;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 900;
+  margin-bottom: 64px;
+}
+.timeline-heading span { color: var(--orange); }
+
+/* ── Timeline container ── */
+.timeline {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Single item ── */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  position: relative;
+}
+
+/* Node column: circle + vertical line */
+.tl-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tl-circle {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  flex-shrink: 0;
+  transition:
+    border-color .25s ease,
+    color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease,
+    transform .22s ease;
+  z-index: 1;
+}
+
+.tl-circle-active {
+  border-color: var(--orange);
+  color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255,69,0,.15);
+}
+
+.tl-line {
+  flex: 1;
+  width: 1.5px;
+  background: var(--border);
+  margin: 4px 0;
+  min-height: 48px;
+  transition: background .3s ease;
+}
+
+/* Content column */
+.tl-content {
+  padding-bottom: 48px;
+  padding-top: 10px;
+}
+
+.tl-last .tl-content { padding-bottom: 0; }
+
+.tl-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.tl-year {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--orange);
+  font-family: 'JetBrains Mono', monospace;
+  min-width: 44px;
+}
+.tl-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  transition: color .2s;
+}
+.tl-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 580px;
+  transition: color .2s;
+}
+
+/* ── Hover state ── */
+.timeline-item:hover .tl-circle {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: rgba(255,69,0,.07);
+  box-shadow: 0 0 0 4px rgba(255,69,0,.12);
+  transform: scale(1.08);
+}
+
+.timeline-item:hover .tl-line {
+  background: var(--orange);
+}
+
+.timeline-item:hover .tl-title {
+  color: var(--orange);
+}
+
+.timeline-item:hover .tl-desc {
+  color: #c0c0c0;
+}
+
+/* ── Scroll-in animation ── */
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition:
+    opacity .5s ease,
+    transform .5s ease;
+}
+.timeline-item.tl-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-section  { padding: 100px 24px 60px; }
+  .timeline-section { padding: 60px 24px 40px; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .photo-card {
+    max-width: 280px;
+    aspect-ratio: 3/4;
+    margin: 0 auto;
+  }
+  .photo-placeholder img {
+    object-position: center top;
+  }
+}

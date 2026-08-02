@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Acevedo — Clientes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="stylesheet" href="CSS/clientes.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIOS SLIDER
+═══════════════════════════════════════ -->
+<section id="clientes" class="cli-section">
+
+  <div class="cli-header">
+    <div class="section-label-wrap">
+      <div class="section-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Testimonios
+      </div>
+    </div>
+    <h1 class="cli-title">Lo que dicen <span>mis clientes</span></h1>
+  </div>
+
+  <!-- Slider -->
+<div class="tsl-wrap">
+  <div class="tsl-track" id="tsl-track">
+
+    <!-- SLIDE 1 -->
+    <div class="tsl-slide">
+      <div class="tsl-card">
+        <div class="tsl-quote-icon">"</div>
+        <div class="tsl-avatar">J</div>
+        <blockquote class="tsl-text">
+          "Necesitábamos digitalizar el análisis de reportes en PDF que antes revisábamos a mano. Daniel desarrolló un sistema por WhatsApp con IA que extrae los datos automáticamente, los convierte a Excel y nos entrega el análisis. Redujimos el tiempo de procesamiento en un 60%."
+        </blockquote>
+        <div class="tsl-author">
+          <strong>Jorge R.</strong>
+          <span>Merchandising Manager</span>
+        </div>
+        <div class="tsl-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="tsl-slide">
+      <div class="tsl-card">
+        <div class="tsl-quote-icon">"</div>
+        <div class="tsl-avatar">G</div>
+        <blockquote class="tsl-text">
+          "Para nuestro proyecto universitario de gestión de alumnos, Daniel diseñó la arquitectura completa: frontend y backend en instancias separadas de AWS, medidas de seguridad contra ataques comunes, y todo alojado con Cloudflare. Un apoyo clave para sacar el proyecto adelante."
+        </blockquote>
+        <div class="tsl-author">
+          <strong>Gerardo G.</strong>
+          <span>Estudiante</span>
+        </div>
+        <div class="tsl-stars">★★★★★</div>
+      </div>
+    </div>
+
+  </div><!-- /track -->
+
+  <!-- Controls -->
+  <div class="tsl-controls">
+    <button class="tsl-btn" id="tsl-prev" aria-label="Anterior">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="tsl-dots" id="tsl-dots"></div>
+    <button class="tsl-btn" id="tsl-next" aria-label="Siguiente">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+</div><!-- /tsl-wrap -->
+</section>
+
+<!-- ══════════════════════════════════════
+     ¿POR QUÉ TRABAJAR CONMIGO?
+═══════════════════════════════════════ -->
+<section id="porque" class="pq-section">
+
+  <div class="pq-header">
+    <div class="section-label-wrap">
+      <div class="section-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Diferenciadores
+      </div>
+    </div>
+    <h2 class="pq-title">¿Por qué trabajar <span>conmigo</span>?</h2>
+    <p class="pq-subtitle">Más allá del código — un enfoque integral que garantiza resultados<br>y tranquilidad para tu empresa.</p>
+  </div>
+
+  <div class="pq-grid">
+
+    <div class="pq-card" data-index="0">
+      <div class="pq-card-glow"></div>
+      <div class="pq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      </div>
+      <h3 class="pq-name">Código Organizado</h3>
+      <p class="pq-desc">Escribo código claro y bien estructurado, pensado para que sea fácil de mantener y entender por otros desarrolladores.</p>
+      <div class="pq-line"></div>
+    </div>
+
+    <div class="pq-card" data-index="1">
+      <div class="pq-card-glow"></div>
+      <div class="pq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3 class="pq-name">Infraestructura Modular</h3>
+      <p class="pq-desc">Trabajo con servicios containerizados e independientes entre sí, facilitando mantenimiento, actualizaciones y escalado por partes según lo necesite tu proyecto.</p>
+      <div class="pq-line"></div>
+    </div>
+
+    <div class="pq-card" data-index="2">
+      <div class="pq-card-glow"></div>
+      <div class="pq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 class="pq-name">Proceso Iterativo</h3>
+      <p class="pq-desc">Trabajo con revisiones periódicas y ajustes constantes durante el desarrollo, evaluando avances y puntos de mejora junto al equipo o cliente.</p>
+      <div class="pq-line"></div>
+    </div>
+
+    <div class="pq-card" data-index="3">
+      <div class="pq-card-glow"></div>
+      <div class="pq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3 class="pq-name">Adaptación al Proyecto</h3>
+      <p class="pq-desc">Ajusto mi forma de trabajar según lo que el proyecto necesita: entregas directas para tareas puntuales, o colaboración iterativa en proyectos de mayor alcance.</p>
+      <div class="pq-line"></div>
+    </div>
+
+    <div class="pq-card" data-index="4">
+      <div class="pq-card-glow"></div>
+      <div class="pq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <h3 class="pq-name">Documentación de Mis Proyectos</h3>
+      <p class="pq-desc">Registro la infraestructura, base de datos y estructura de mis proyectos personales, como práctica para mantener claridad sobre lo que construyo.</p>
+      <div class="pq-line"></div>
+    </div>
+
+    <div class="pq-card" data-index="5">
+      <div class="pq-card-glow"></div>
+      <div class="pq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <h3 class="pq-name">Automatización Inteligente</h3>
+      <p class="pq-desc">Identifico procesos repetitivos y los automatizo con IA para que tu equipo se enfoque en lo que realmente importa.</p>
+      <div class="pq-line"></div>
+    </div>
+
+  </div><!-- /pq-grid -->
+</section>
+
+<div class="spacer"></div>
+<script src="JS/config.js"></script>
+<script src="JS/navbar.js"></script>
+<script src="JS/particles.js"></script>
+<script src="JS/clientes.js"></script>
+</body>
+</html>

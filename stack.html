@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Acevedo — Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/">
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="stylesheet" href="CSS/stack.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     STACK SECTION
+═══════════════════════════════════════ -->
+<section id="stack" class="stack-section">
+
+  <!-- Header -->
+  <div class="stack-header">
+    <div class="section-label-wrap">
+      <div class="section-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Stack Tecnológico
+      </div>
+    </div>
+    <h1 class="stack-title">Tecnologías que <span>Domino</span></h1>
+    <p class="stack-subtitle">Herramientas y plataformas con las que construyo soluciones empresariales de alto rendimiento.</p>
+  </div>
+
+  <!-- Tab filters -->
+  <div class="stack-tabs" id="stack-tabs">
+    <button class="stab active" data-cat="frontend">Frontend</button>
+    <button class="stab" data-cat="backend">Backend</button>
+    <button class="stab" data-cat="cloud">Cloud &amp; DevOps</button>
+    <button class="stab" data-cat="db">Bases de Datos</button>
+    <button class="stab" data-cat="ia">IA &amp; Automatización</button>
+  </div>
+
+  <!-- Cards grid -->
+  <div class="stack-grid" id="stack-grid">
+
+    <!-- ── FRONTEND ── -->
+    <div class="sk-card" data-cat="frontend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#e34c26">
+          <i class="devicon-html5-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">HTML5</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="95"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Estructura semántica y accesibilidad web moderna</p>
+    </div>
+
+    <div class="sk-card" data-cat="frontend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#264de4">
+          <i class="devicon-css3-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">CSS3</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="90"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Diseño responsive, Tailwind, animaciones avanzadas</p>
+    </div>
+
+    <div class="sk-card" data-cat="frontend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#f0db4f">
+          <i class="devicon-javascript-plain" style="font-size: 28px; color: #323330;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">JavaScript</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="80"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Patrones de diseño modernos</p>
+    </div>
+
+    <div class="sk-card" data-cat="frontend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#61dafb">
+          <i class="devicon-react-original" style="font-size: 28px; color: #20232a;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">React</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="60"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Componentes, hooks, estado global, Next.js</p>
+    </div>
+
+    <!-- ── BACKEND ── -->
+    <div class="sk-card" data-cat="backend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#f89820">
+          <i class="devicon-java-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Java</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="80"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Spring Boot, Microservicios, JPA, Hibernate</p>
+    </div>
+
+    <div class="sk-card" data-cat="backend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#6db33f">
+          <i class="devicon-spring-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Spring Boot</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="70"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">REST APIs, seguridad, testing, despliegue</p>
+    </div>
+
+    <div class="sk-card" data-cat="backend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#512BD4">
+          <i class="devicon-csharp-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">C#</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="88"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">ASP.NET Core, Entity Framework, APIs empresariales</p>
+    </div>
+
+
+    <div class="sk-card" data-cat="backend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#3776AB">
+          <i class="devicon-python-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Python</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="77"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Scripting, automatización, IA, data processing</p>
+    </div>
+
+    <div class="sk-card" data-cat="backend">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#FF2D20">
+          <i class="devicon-laravel-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Laravel</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="78"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Eloquent ORM, APIs REST, Blade, Artisan</p>
+    </div>
+
+    <!-- ── CLOUD & DEVOPS ── -->
+    <div class="sk-card" data-cat="cloud">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#FF9900">
+          <i class="devicon-amazonwebservices-plain-wordmark" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">AWS</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="80"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">EC2, S3</p>
+    </div>
+
+    <div class="sk-card" data-cat="cloud">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#2496ED">
+          <i class="devicon-docker-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Docker</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="80"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Contenedores, Docker Compose</p>
+    </div>
+
+    <!-- ── UBUNTU SERVER ── -->
+    <div class="sk-card" data-cat="cloud">
+      <div class="sk-top">
+        <!-- Ícono con el naranja oficial de marca de Ubuntu -->
+        <div class="sk-icon" style="background:#E95420">
+          <i class="devicon-ubuntu-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Ubuntu Server</span>
+          <div class="sk-bar-wrap">
+            <!-- Ajusta este % según qué tan cómodo te sientas administrándolo -->
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="82"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Descripción basada en lo que ya haces día a día en tu VPS -->
+      <p class="sk-desc">Administración de servidores, SSH, systemd, gestión de Docker en producción</p>
+    </div>
+
+    <div class="sk-card" data-cat="cloud">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#F38020">
+          <i class="devicon-cloudflare-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Cloudflare</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="80"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">CDN, DNS, Tunnels</p>
+    </div>
+
+    <div class="sk-card" data-cat="cloud">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#009639">
+          <i class="devicon-nginx-original" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Nginx</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="75"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Proxy inverso, SSL</p>
+    </div>
+
+    <div class="sk-card" data-cat="cloud">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#1F88C0">
+          <svg width="28" height="28" viewBox="0 0 512 512" fill="white">
+            <path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm0 384c-88.4 0-160-71.6-160-160S167.6 96 256 96s160 71.6 160 160-71.6 160-160 160zm48-224h-16v-32c0-17.7-14.3-32-32-32s-32 14.3-32 32v32h-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16v-96c0-8.8-7.2-16-16-16zm-64-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h-32v-32z"/>
+          </svg>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Caddy</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="75"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">HTTPS automático, reverse proxy simplificado</p>
+    </div>
+
+    <!-- ── BASES DE DATOS ── -->
+    <div class="sk-card" data-cat="db">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#336791">
+          <i class="devicon-postgresql-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">PostgreSQL</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="95"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Consultas avanzadas, índices, PL/pgSQL</p>
+    </div>
+
+    <div class="sk-card" data-cat="db">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#CC2927">
+          <i class="devicon-microsoftsqlserver-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">SQL Server</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="85"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">T-SQL, stored procedures, backups</p>
+    </div>
+
+    <div class="sk-card" data-cat="db">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#4479A1">
+          <i class="devicon-mysql-plain" style="font-size: 28px; color: white;"></i>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">MySQL</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="82"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">InnoDB, optimización de queries, backups</p>
+    </div>
+
+    <!-- ── IA & AUTOMATIZACIÓN ── -->
+    <div class="sk-card" data-cat="ia">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#EA4B71">
+          <img src="https://cdn.simpleicons.org/n8n/ffffff" width="28" height="28" alt="n8n" />
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">n8n</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="92"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Workflows empresariales, integraciones, webhooks</p>
+    </div>
+
+    <div class="sk-card" data-cat="ia">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#10a37f">
+          <img src="https://cdn.simpleicons.org/openai/ffffff" width="28" height="28" alt="OpenAI" />
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">OpenAI</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="85"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">GPT, embeddings</p>
+    </div>
+
+    <div class="sk-card" data-cat="ia">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#ff4500">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M4 4h16v16H4z"/>
+            <path d="M8 8h8v8H8z"/>
+            <path d="M12 4v4M12 16v4M4 12h4M16 12h4"/>
+          </svg>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">REST APIs</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="75"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Diseño de APIs, documentación, seguridad, rate limiting</p>
+    </div>
+
+    <div class="sk-card" data-cat="ia">
+      <div class="sk-top">
+        <div class="sk-icon" style="background:#6941C6">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 5v2M12 17v2M5 12h2M17 12h2"/>
+            <path d="M8.5 8.5l1.5 1.5M14 14l1.5 1.5M8.5 15.5l1.5-1.5M14 10l1.5-1.5"/>
+          </svg>
+        </div>
+        <div class="sk-name-wrap">
+          <span class="sk-name">Webhooks</span>
+          <div class="sk-bar-wrap">
+            <div class="sk-bar"><div class="sk-bar-fill" data-w="88"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="sk-desc">Integraciones en tiempo real, event-driven architecture</p>
+    </div>
+
+  </div><!-- /stack-grid -->
+</section>
+
+<div class="spacer"></div>
+
+<script src="JS/config.js"></script>
+<script src="JS/navbar.js"></script>
+<script src="JS/particles.js"></script>
+<script src="JS/stack.js"></script>
+</body>
+</html>

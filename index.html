@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Acevedo — Full Stack & AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/styles.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+  <!-- ── NAVBAR (cargado desde JS) ── -->
+  <!-- Eliminado: ahora se carga con navbar.js -->
+
+
+<!-- ── HERO ── -->
+<section id="inicio">
+  <div class="hero-left">
+    <div class="available-badge">
+      <span class="dot"></span>
+      Disponible para proyectos
+    </div>
+
+    <div class="hero-greeting">Hola, soy</div>
+    <div class="hero-name">Daniel Acevedo</div>
+
+    <div class="hero-roles">
+      <div class="hero-role">Full Stack Engineer</div>
+      <div class="hero-role">AI Automation Specialist</div>
+      <div class="hero-role">Cloud & DevOps Engineer</div>
+    </div>
+
+    <p class="hero-desc">Construyo aplicaciones web modernas, automatizo procesos empresariales mediante Inteligencia Artificial y diseño infraestructuras escalables en la nube.</p>
+    <p class="hero-stack">Especializado en <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>Python</strong>, <strong>Docker</strong>, <strong>Linux</strong>, <strong>PostgreSQL</strong>, <strong>n8n</strong>, conocimientos en <strong>Java</strong>, <strong>C#</strong>, y arquitecturas modernas.</p>
+
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="navigateTo('portafolio.html')">Ver proyectos →</button>
+      <button class="btn-secondary" onclick="navigateTo('contacto.html')">Agenda una reunión 📅</button>
+      <button class="btn-ghost" onclick="window.location.href='asset/Curriculum Daniel.pdf'">Descargar CV ⬇</button>
+    </div>
+
+    <div class="hero-socials">
+      <a href="https://github.com/EndersenAcevedo" target="_blank" class="social-circle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/endersen-acevedo-615b53342" target="_blank" class="social-circle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="mailto:endanus@gmail.com" class="social-circle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="hero-right">
+    <div class="dashboard">
+      <div class="dash-header">
+        <div class="dash-dots">
+          <div class="dash-dot red"></div>
+          <div class="dash-dot yellow"></div>
+          <div class="dash-dot green"></div>
+        </div>
+        <div class="dash-title">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="color:#22c55e"><circle cx="12" cy="12" r="10"/></svg>
+          daniel@server:~
+        </div>
+        <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div class="dash-card-label">🐋 Docker</div>
+            <div class="dash-status status-orange"></div>
+          </div>
+          <div class="dash-value">5 cont.</div>
+          <div class="dash-sub">5 activos (100% uptime)</div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width:75%"></div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div class="dash-card-label">⚡ API Gateway</div>
+            <div class="dash-status status-green"></div>
+          </div>
+          <div class="dash-value">99.9%</div>
+          <div class="dash-sub">42ms lat.</div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width:99%"></div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div class="dash-card-label">🤖 AI Agents</div>
+            <div class="dash-status status-orange"></div>
+          </div>
+          <div class="dash-value">5 activos</div>
+          <div class="dash-sub">Open WebIU</div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width:60%"></div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div class="dash-card-label">🔄 n8n WF</div>
+            <div class="dash-status status-orange"></div>
+          </div>
+          <div class="dash-value">28 flows</div>
+          <div class="dash-sub">0 errores (24h)</div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div class="dash-card-label">🛡 CF Tunnel</div>
+            <div class="dash-status status-green"></div>
+          </div>
+          <div class="dash-value">Activo</div>
+          <div class="dash-sub">SSL ok</div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div class="dash-card-label">🐘 PostgreSQL</div>
+            <div class="dash-status status-green"></div>
+          </div>
+          <div class="dash-value" id="pg-ms">52ms</div>
+          <div class="dash-sub">2 conn.</div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width:30%"></div></div>
+        </div>
+      </div>
+
+      <div class="sys-stats">
+        <div class="sys-stat">
+          <div class="sys-stat-label">CPU</div>
+          <div class="sys-stat-val" id="cpu-val">34%</div>
+          <div class="sys-bar"><div class="sys-bar-fill cpu-fill" id="cpu-bar" style="width:34%"></div></div>
+        </div>
+        <div class="sys-stat">
+          <div class="sys-stat-label">RAM</div>
+          <div class="sys-stat-val" id="ram-val">62%</div>
+          <div class="sys-bar"><div class="sys-bar-fill ram-fill" id="ram-bar" style="width:62%"></div></div>
+        </div>
+        <div class="sys-stat">
+          <div class="sys-stat-label">DISK</div>
+          <div class="sys-stat-val" id="disk-val">41%</div>
+          <div class="sys-bar"><div class="sys-bar-fill disk-fill" id="disk-bar" style="width:41%"></div></div>
+        </div>
+      </div>
+
+      <div class="terminal">
+        <div class="term-header">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          Deploy Logs
+        </div>
+        <div id="term-output"></div>
+        <span class="term-cursor"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NUMBERS SECTION ── -->
+<section id="stats">
+  <div class="stats-header">
+    <div>
+      <h2 class="stats-title">Números que <span>hablan</span></h2>
+      <p class="stats-desc">Resultados medibles que reflejan el impacto de cada proyecto y automatización implementada.</p>
+    </div>
+    <div class="updated-badge">
+      <span class="red-dot"></span>
+      Actualizado 2026
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number" data-target="3" data-suffix="+">0+</div>
+      <div class="stat-label">Proyectos Completados</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" data-target="15" data-suffix="+">0+</div>
+      <div class="stat-label">Automatizaciones IA</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" data-target="100" data-suffix="%">0%</div>
+      <div class="stat-label">Clientes Satisfechos</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" data-target="2" data-suffix="+">0+</div>
+      <div class="stat-label">Tecnologías Cloud</div>
+    </div>
+  </div>
+</section>
+
+<div class="spacer"></div>
+
+<script src="JS/config.js"></script>
+<script src="JS/navbar.js"></script>
+<script src="JS/particles.js"></script>
+<script src="JS/main.js"></script>
+</body>
+</html>

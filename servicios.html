@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Acevedo — Servicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="stylesheet" href="CSS/servicios.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     SERVICIOS
+═══════════════════════════════════════ -->
+<section id="servicios" class="srv-section">
+
+  <!-- Header -->
+  <div class="srv-header">
+    <div class="section-label-wrap">
+      <div class="section-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        Servicios
+      </div>
+    </div>
+    <h1 class="srv-title">Lo que <span>Ofrezco</span></h1>
+    <p class="srv-subtitle">Servicios profesionales de desarrollo y automatización<br>para empresas que buscan excelencia técnica.</p>
+  </div>
+
+  <!-- Cards grid -->
+  <div class="srv-grid">
+
+    <!-- 1: Desarrollo Full Stack -->
+    <div class="srv-card" data-index="0">
+      <div class="srv-card-glow"></div>
+      <div class="srv-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3 class="srv-name">Desarrollo Full Stack</h3>
+      <p class="srv-desc">Aplicaciones web completas desde el frontend hasta la infraestructura, con arquitectura limpia y código escalable.</p>
+      <ul class="srv-list">
+        <li>Frontend con HTML, CSS y JavaScript puro</li>
+        <li>Backend con Laravel, con experiencia también en Java y C#</li>
+        <li>APIs REST y estructuración de proyectos backend</li>
+        <li>CI/CD automatizado con Docker y GitHub Actions</li>
+      </ul>
+      <button class="srv-btn" onclick="navigateTo('contacto.html')">Solicitar servicio →</button>
+    </div>
+
+    <!-- 2: Automatización con IA (FEATURED) -->
+    <div class="srv-card srv-featured" data-index="1">
+      <div class="srv-card-glow"></div>
+      <div class="srv-featured-badge">⭐ Más solicitado</div>
+      <div class="srv-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/><circle cx="12" cy="16" r="1"/></svg>
+      </div>
+      <h3 class="srv-name">Automatización con IA</h3>
+      <p class="srv-desc">Automatizo procesos empresariales completos usando inteligencia artificial, reduciendo costos operativos drásticamente.</p>
+      <ul class="srv-list">
+        <li>Agentes IA con OpenAI y OpenRouter</li>
+        <li>Workflows con n8n</li>
+        <li>Procesamiento de documentos</li>
+        <li>Chatbots empresariales inteligentes</li>
+      </ul>
+      <button class="srv-btn" onclick="navigateTo('contacto.html')">Solicitar servicio →</button>
+    </div>
+
+    <!-- 3: Arquitectura Cloud -->
+    <div class="srv-card" data-index="2">
+      <div class="srv-card-glow"></div>
+      <div class="srv-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+      </div>
+      <h3 class="srv-name">Arquitectura Cloud</h3>
+      <p class="srv-desc">Diseño e implementación de infraestructuras cloud escalables, seguras y optimizadas en costos.</p>
+      <ul class="srv-list">
+        <li>Despliegue de aplicaciones en AWS EC2</li>
+        <li>Configuración de servidores Linux (frontend y backend)</li>
+        <li>Gestión de instancias y conexión remota (SSH)</li>
+        <li>Fundamentos de infraestructura cloud</li>
+      </ul>
+      <button class="srv-btn" onclick="navigateTo('contacto.html')">Solicitar servicio →</button>
+    </div>
+
+    <!-- 4: Administración Linux -->
+    <div class="srv-card" data-index="3">
+      <div class="srv-card-glow"></div>
+      <div class="srv-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3 class="srv-name">Administración Linux</h3>
+      <p class="srv-desc">Configuración, hardening y mantenimiento de servidores Linux para entornos de producción.</p>
+      <ul class="srv-list">
+        <li>Ubuntu / Debian</li>
+        <li>Monitoreo de conectividad con alertas automáticas por correo</li>
+        <li>Scripts de auto-recuperación ante caídas de servicio</li>
+        <li>Automatización con bash y cron jobs</li>
+      </ul>
+      <button class="srv-btn" onclick="navigateTo('contacto.html')">Solicitar servicio →</button>
+    </div>
+
+    <!-- 5: Bases de Datos SQL -->
+    <div class="srv-card" data-index="4">
+      <div class="srv-card-glow"></div>
+      <div class="srv-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      </div>
+      <h3 class="srv-name">Bases de Datos SQL</h3>
+      <p class="srv-desc">Diseño, optimización y administración de bases de datos relacionales para aplicaciones críticas.</p>
+      <ul class="srv-list">
+        <li>PostgreSQL / SQL Server</li>
+        <li>Modelado de datos</li>
+        <li>Optimización de queries</li>
+        <li>Backups y recuperación</li>
+      </ul>
+      <button class="srv-btn" onclick="navigateTo('contacto.html')">Solicitar servicio →</button>
+    </div>
+
+   </div><!-- /srv-grid -->
+
+  <!-- CTA bottom -->
+  <div class="srv-cta-wrap">
+    <p class="srv-cta-text">¿No encuentras lo que buscas? Hablemos de tu proyecto específico.</p>
+    <button class="srv-cta-btn" onclick="navigateTo('contacto.html')">
+      Consultoría personalizada
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </button>
+  </div>
+
+</section>
+
+<div class="spacer"></div>
+
+<script src="JS/config.js"></script>
+<script src="JS/navbar.js"></script>
+<script src="JS/particles.js"></script>
+<script src="JS/servicios.js"></script>
+</body>
+</html>

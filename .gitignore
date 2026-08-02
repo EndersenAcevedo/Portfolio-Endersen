@@ -1,0 +1,9 @@
+# Configuración sensible
+JS/config.js
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Node (si algún día usas npm)
+node_modules/
