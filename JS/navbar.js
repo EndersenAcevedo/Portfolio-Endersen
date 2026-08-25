@@ -45,12 +45,32 @@ function navigateTo(url) {
     }, 300);
 }
 
+
+// ── FUNCIÓN PARA CARGAR EL FAVICON ──
+function loadFavicon() {
+    const favicons = [
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'asset/favicon-32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '64x64', href: 'asset/favicon-64.png' },
+        { rel: 'apple-touch-icon', href: 'asset/logo-512.png' }
+    ];
+
+    favicons.forEach(iconData => {
+        const link = document.createElement('link');
+        link.rel = iconData.rel;
+        if (iconData.type) link.type = iconData.type;
+        if (iconData.sizes) link.sizes = iconData.sizes;
+        link.href = iconData.href;
+        document.head.appendChild(link);
+    });
+}
+
+
 // ── FUNCIÓN PARA CARGAR EL NAVBAR ──
 function loadNavbar() {
     const navHTML = `
     <nav class="nav-principal">
       <button class="nav-logo" onclick="navigateTo('index.html')">
-        <div class="nav-logo-badge">DA</div>
+        <img src="asset/nav-logo-orange-160.png" alt="Endanus" class="nav-logo-badge">
         <span class="nav-logo-name">Daniel Acevedo</span>
       </button>
       <div class="nav-links">
@@ -206,13 +226,17 @@ function pageEnterAnimation() {
     }
 }
 
+
 // ── EJECUTAR CUANDO EL DOM ESTÉ LISTO ──
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadNavbar);
+    document.addEventListener('DOMContentLoaded', () => {
+        loadFavicon();
+        loadNavbar();
+    });
 } else {
+    loadFavicon();
     loadNavbar();
 }
-
 /* ------------------------------------------------------------
    TRACKING DE VISITAS → WEBHOOK N8N
    Cooldown de 30 minutos por sesión para no spamear.
