@@ -41,35 +41,60 @@
     <!-- Projects grid -->
     <div class="pf-grid" id="pf-grid">
 
-    <!-- PROJECT 1 — MVP Gestión de Alumnos -->
+    <!-- PROJECT 1 — MVP CRUD multicapa en AWS (2 instancias) -->
     <div class="pf-card" data-cat="cloud web" data-id="0">
       <div class="pf-img-wrap">
-        <img src="asset/aws.png" alt="MVP Gestión de Alumnos" class="pf-img-placeholder" />
+        <img src="asset/aws.png" alt="MVP Multicapa en AWS — 2 Instancias" class="pf-img-placeholder" loading="lazy" />
         <div class="pf-img-overlay"></div>
         <span class="pf-badge">Cloud</span>
-        <div class="pf-hover-cta pf-hover-cta-soon" data-msg="🚧 Detalles disponibles muy pronto" data-icon="construction"><span>Ver detalles</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <a href="https://youtu.be/iD3R5eGxoBc" target="_blank" class="pf-hover-cta"><span>Ver video</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
       </div>
       <div class="pf-body">
-        <h3 class="pf-name">MVP de Gestión de Alumnos</h3>
-        <p class="pf-desc">Plataforma web para gestión de alumnos desarrollada como proyecto universitario, con frontend y backend en instancias separadas de AWS.</p>
-        <div class="pf-tech-tags"><span>AWS EC2</span><span>Cloudflare</span><span>Seguridad básica</span></div>
+        <h3 class="pf-name">MVP Multicapa en AWS — 2 Instancias</h3>
+        <p class="pf-desc">MVP de CRUD con inicio de sesión, desplegado en dos instancias EC2 separadas: el frontend en un servidor y la lógica y los datos en otro.</p>
+        <div class="pf-tech-tags"><span>AWS EC2</span><span>Windows Server</span><span>IIS</span><span>PHP 8.5</span><span>MySQL 8</span></div>
         <div class="pf-actions">
-          <a href="#" class="pf-link pf-link-soon" data-msg="🔒 Código disponible muy pronto"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>Código</a>
-          <a href="#" class="pf-link pf-link-soon" data-msg="🔒 Demo disponible muy pronto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Demo</a>
+          <a href="https://youtu.be/iD3R5eGxoBc" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
           <button class="pf-expand-btn" data-id="0">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
         </div>
         <div class="pf-detail" id="detail-0">
           <div class="pf-detail-inner">
-            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>El equipo universitario necesitaba una plataforma funcional para gestionar alumnos, sin experiencia previa en despliegue cloud.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Diseñé la arquitectura completa: frontend y backend en instancias EC2 separadas, con medidas básicas de seguridad y hosting vía Cloudflare.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>MVP funcional entregado a tiempo, con arquitectura clara que el equipo pudo entender y mantener.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>El equipo universitario necesitaba una plataforma funcional, sin experiencia previa en despliegue cloud.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Diseñé una arquitectura con segregación de funciones: la presentación (IIS, HTML, CSS y JS) en una instancia y la lógica PHP con MySQL en otra, comunicadas por peticiones HTTP.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Inicio de sesión y registros funcionando de punta a punta, con la base de datos aislada en la capa de backend.</p></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- PROJECT 2 — Portafolio Remasterizado -->
-    <div class="pf-card" data-cat="web" data-id="1">
+    <!-- PROJECT 2 — Cloud Campus (1 instancia) -->
+    <div class="pf-card" data-cat="cloud web" data-id="1">
+      <div class="pf-img-wrap">
+        <img src="https://i.ytimg.com/vi/NCIOKAWWMQc/maxresdefault.jpg" alt="Cloud Campus — Gestión Académica en AWS" class="pf-img-placeholder" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/NCIOKAWWMQc/hqdefault.jpg'" />
+        <div class="pf-img-overlay"></div>
+        <span class="pf-badge">Cloud</span>
+        <a href="https://youtu.be/NCIOKAWWMQc" target="_blank" class="pf-hover-cta"><span>Ver video</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      </div>
+      <div class="pf-body">
+        <h3 class="pf-name">Cloud Campus — Gestión Académica en AWS</h3>
+        <p class="pf-desc">Sistema de gestión de alumnos con portales para docente y alumno, desplegado completo en una sola instancia de AWS EC2.</p>
+        <div class="pf-tech-tags"><span>AWS EC2</span><span>IIS</span><span>PHP + PDO</span><span>MySQL 8</span></div>
+        <div class="pf-actions">
+          <a href="https://youtu.be/NCIOKAWWMQc" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
+          <button class="pf-expand-btn" data-id="1">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        </div>
+        <div class="pf-detail" id="detail-1">
+          <div class="pf-detail-inner">
+            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Se necesitaba un MVP rápido para gestionar alumnos, cursos y calificaciones, accesible desde internet.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Desarrollé el sistema con inicio de sesión por roles y control de acceso en cada página, y lo desplegué en una instancia EC2 con IIS, PHP (consultas preparadas con PDO) y MySQL.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>MVP en línea desde la IP pública: el docente cambia una nota y el alumno la ve al instante.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 — Portafolio Remasterizado -->
+    <div class="pf-card" data-cat="web" data-id="2">
       <div class="pf-img-wrap">
         <video class="pf-img-placeholder pf-video" muted loop playsinline preload="metadata">
           <source src="asset/videos/portfolio.mp4" type="video/mp4">
@@ -88,9 +113,9 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
             TikTok
           </a>
-          <button class="pf-expand-btn" data-id="1">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <button class="pf-expand-btn" data-id="2">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
         </div>
-        <div class="pf-detail" id="detail-1">
+        <div class="pf-detail" id="detail-2">
           <div class="pf-detail-inner">
             <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Mi portafolio anterior era de una sola página, sin automatizaciones ni forma de saber quién lo visitaba.</p></div>
             <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Rediseño completo a un sitio multi-página, con webhooks propios en n8n para notificarme visitas y mensajes de contacto en tiempo real.</p></div>
@@ -100,132 +125,162 @@
       </div>
     </div>
 
-    <!-- PROJECT 3 — Plataforma de IA -->
-    <div class="pf-card" data-cat="ia" data-id="2">
+    <!-- PROJECT 4 — IA Studio -->
+    <div class="pf-card" data-cat="ia web" data-id="3">
       <div class="pf-img-wrap">
-        <img src="asset/iaweb.png" alt="Plataforma de IA Conversacional" class="pf-img-placeholder" />
+        <img src="asset/iaweb.png" alt="IA Studio — Plataforma Web de IA" class="pf-img-placeholder" loading="lazy" />
         <div class="pf-img-overlay"></div>
         <span class="pf-badge">IA</span>
-        <div class="pf-hover-cta pf-hover-cta-soon" data-msg="🚧 Detalles disponibles muy pronto" data-icon="construction"><span>Ver detalles</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <a href="https://youtu.be/rVBR9lg2GQ4" target="_blank" class="pf-hover-cta"><span>Ver video</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
       </div>
       <div class="pf-body">
-        <h3 class="pf-name">Plataforma de IA Conversacional</h3>
-        <p class="pf-desc">Proyecto personal en desarrollo: plataforma tipo chat con IA, documentando desde cero infraestructura y base de datos.</p>
-        <div class="pf-tech-tags"><span>IA / LLM</span><span>PostgreSQL</span><span>Docker</span></div>
+        <h3 class="pf-name">IA Studio — Plataforma Web de IA</h3>
+        <p class="pf-desc">Plataforma propia con asistentes de IA, chat con varios modelos, Web Builder que genera páginas por instrucción y un centro de tráfico con mapas y predicciones.</p>
+        <div class="pf-tech-tags"><span>Laravel</span><span>PostgreSQL</span><span>OpenRouter</span><span>n8n</span><span>Docker</span><span>Leaflet</span></div>
         <div class="pf-actions">
-          <a href="#" class="pf-link pf-link-soon" data-msg="🔒 Código disponible muy pronto"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>Código</a>
-          <a href="#" class="pf-link pf-link-soon" data-msg="🔒 Demo disponible muy pronto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Demo</a>
-          <button class="pf-expand-btn" data-id="2">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <a href="https://youtu.be/rVBR9lg2GQ4" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
+          <button class="pf-expand-btn" data-id="3">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
         </div>
-        <div class="pf-detail" id="detail-2">
+        <div class="pf-detail" id="detail-3">
           <div class="pf-detail-inner">
-            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Quería profundizar en el diseño de infraestructura de IA por cuenta propia, más allá de usar APIs de terceros.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Estoy construyendo una plataforma propia tipo chat, documentando cada decisión de infraestructura y base de datos.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Proyecto en curso — documentación de infraestructura ya completa, plataforma en desarrollo activo.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Quería ir más allá de usar APIs de terceros y construir mi propia plataforma de IA, desde la interfaz hasta la infraestructura.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Desarrollé IA Studio: asistentes configurables, proyectos, chat con varios modelos vía OpenRouter, Web Builder, gestor de archivos y un centro de tráfico con mapa interactivo, alertas y predicciones.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Plataforma funcional alojada en mi propio entorno híbrido, con acceso por Google, GitHub o correo.</p></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- PROJECT 4 — Sox: Agente orquestador -->
-    <div class="pf-card" data-cat="ia automatizacion" data-id="3">
+    <!-- PROJECT 5 — Entorno Híbrido de Producción -->
+    <div class="pf-card" data-cat="cloud automatizacion" data-id="4">
       <div class="pf-img-wrap">
-        <div class="pf-img-placeholder pf-img-4"></div>
+        <img src="https://i.ytimg.com/vi/DzChWSgdvLw/maxresdefault.jpg" alt="Entorno Híbrido de Producción" class="pf-img-placeholder" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/DzChWSgdvLw/hqdefault.jpg'" />
+        <div class="pf-img-overlay"></div>
+        <span class="pf-badge">Cloud</span>
+        <a href="https://youtu.be/DzChWSgdvLw" target="_blank" class="pf-hover-cta"><span>Ver video</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      </div>
+      <div class="pf-body">
+        <h3 class="pf-name">Entorno Híbrido de Producción</h3>
+        <p class="pf-desc">Infraestructura propia: un VPS público conectado por túneles SSH cifrados a un servidor local que ejecuta n8n, PostgreSQL y mis aplicaciones en Docker.</p>
+        <div class="pf-tech-tags"><span>Ubuntu Server</span><span>Docker</span><span>Caddy</span><span>Túneles SSH</span><span>n8n</span><span>PostgreSQL</span></div>
+        <div class="pf-actions">
+          <a href="https://youtu.be/DzChWSgdvLw" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
+          <a href="https://github.com/EndersenAcevedo/n8n-proyects" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>Código</a>
+          <button class="pf-expand-btn" data-id="4">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        </div>
+        <div class="pf-detail" id="detail-4">
+          <div class="pf-detail-inner">
+            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Necesitaba alojar mis aplicaciones y automatizaciones en producción sin servidores costosos y sin exponer mi red local.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>El VPS recibe el tráfico con Caddy (HTTPS automático) y lo envía por túneles SSH inversos al servidor local, que nunca abre puertos a internet.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>13 flujos de n8n publicados con más de 2,500 ejecuciones, además de IA Studio y este portafolio, funcionando sobre esta base.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 6 — Sox: Agente orquestador -->
+    <div class="pf-card" data-cat="ia automatizacion" data-id="5">
+      <div class="pf-img-wrap">
+        <img src="asset/proyectos/sox.jpg" alt="Sox — Agente Orquestador de IA" class="pf-img-placeholder" loading="lazy" />
         <div class="pf-img-overlay"></div>
         <span class="pf-badge">IA</span>
-        <div class="pf-hover-cta pf-hover-cta-soon" data-msg="🚧 Detalles disponibles muy pronto" data-icon="construction"><span>Ver detalles</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <a href="https://youtu.be/G2hvI5nVlcM" target="_blank" class="pf-hover-cta"><span>Ver video</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
       </div>
       <div class="pf-body">
         <h3 class="pf-name">Sox — Agente Orquestador de IA</h3>
-        <p class="pf-desc">Agente conversacional por WhatsApp que interpreta solicitudes y dirige la conversación hacia sub-agentes especializados usando búsqueda vectorial.</p>
-        <div class="pf-tech-tags"><span>n8n</span><span>Mistral AI</span><span>PostgreSQL</span><span>Vector DB</span><span>WhatsApp API</span></div>
+        <p class="pf-desc">Agente conversacional por WhatsApp que entiende texto, audios e imágenes y dirige cada solicitud al sub-agente correcto, apoyado en memoria vectorial.</p>
+        <div class="pf-tech-tags"><span>n8n</span><span>OpenAI</span><span>Mistral AI</span><span>PostgreSQL</span><span>Vector DB</span><span>WhatsApp API</span></div>
         <div class="pf-actions">
-          <a href="#" class="pf-link pf-link-soon" data-msg="🔒 Video disponible muy pronto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
-          <button class="pf-expand-btn" data-id="3">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <a href="https://youtu.be/G2hvI5nVlcM" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
+          <a href="https://github.com/EndersenAcevedo/n8n-proyects" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>Código</a>
+          <button class="pf-expand-btn" data-id="5">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
         </div>
-        <div class="pf-detail" id="detail-3">
+        <div class="pf-detail" id="detail-5">
           <div class="pf-detail-inner">
-            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Gestionar varias tareas operativas (inventario, finanzas, consultas) requería saltar entre herramientas distintas sin un punto de entrada único.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Diseñé a Sox, un agente central en n8n que recibe mensajes por WhatsApp, interpreta la intención con Mistral y usa tablas vectoriales para dirigir la conversación al sub-agente correcto.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Gestionar varias tareas operativas (inventario, finanzas, reportes) requería saltar entre herramientas distintas sin un punto de entrada único.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Diseñé a Sox en n8n: recibe mensajes por WhatsApp, transcribe audios, interpreta la intención con IA y usa memoria vectorial para dirigir la conversación a sub-agentes como Work, Finanzas o Ventas no procesadas.</p></div>
             <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Un solo punto de contacto por WhatsApp que coordina múltiples soluciones automatizadas sin que el usuario deba saber cuál usar.</p></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- PROJECT 5 — Work: Auditoría de inventario -->
-    <div class="pf-card" data-cat="automatizacion" data-id="4">
+    <!-- PROJECT 7 — Ventas no procesadas -->
+    <div class="pf-card" data-cat="ia automatizacion" data-id="6">
       <div class="pf-img-wrap">
-        <div class="pf-img-placeholder pf-img-5"></div>
+        <img src="asset/proyectos/ventas.jpg" alt="Ventas No Procesadas — PDF a Hoja de Cálculo" class="pf-img-placeholder" loading="lazy" />
         <div class="pf-img-overlay"></div>
         <span class="pf-badge">Automatización</span>
-        <div class="pf-hover-cta pf-hover-cta-soon" data-msg="🚧 Detalles disponibles muy pronto" data-icon="construction"><span>Ver detalles</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <a href="https://youtu.be/jIuB26NS_jI" target="_blank" class="pf-hover-cta"><span>Ver video</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
       </div>
       <div class="pf-body">
-        <h3 class="pf-name">Work — Auditoría de Inventario por Imagen</h3>
-        <p class="pf-desc">Sub-agente que recibe imágenes, las analiza y genera cuadros de auditoría e inventario automáticamente en Google Sheets.</p>
-        <div class="pf-tech-tags"><span>n8n</span><span>Google Sheets</span><span>PostgreSQL</span><span>Análisis de imagen</span></div>
+        <h3 class="pf-name">Ventas No Procesadas — PDF a Hoja de Cálculo</h3>
+        <p class="pf-desc">Recibe por WhatsApp el reporte de ventas del sistema en PDF y devuelve, en menos de un minuto, una hoja de cálculo con cada venta que quedó sin procesar.</p>
+        <div class="pf-tech-tags"><span>n8n</span><span>IA</span><span>Google Sheets</span><span>WhatsApp API</span></div>
         <div class="pf-actions">
-          <a href="#" class="pf-link pf-link-soon" data-msg="🔒 Video disponible muy pronto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
-          <button class="pf-expand-btn" data-id="4">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-        </div>
-        <div class="pf-detail" id="detail-4">
-          <div class="pf-detail-inner">
-            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>El dueño del negocio invertía horas revisando y registrando manualmente el inventario a partir de fotos de productos.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Work recibe las imágenes, extrae la información relevante y genera cuadros de auditoría y análisis directo en Google Sheets, apoyado en PostgreSQL para el registro histórico.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>El trabajo de revisión de inventario del owner quedó completamente automatizado.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECT 6 — Gestor de Ingresos y Gastos -->
-    <div class="pf-card" data-cat="automatizacion" data-id="5">
-      <div class="pf-img-wrap">
-        <div class="pf-img-placeholder pf-img-6"></div>
-        <div class="pf-img-overlay"></div>
-        <span class="pf-badge">Automatización</span>
-        <div class="pf-hover-cta pf-hover-cta-soon" data-msg="🚧 Detalles disponibles muy pronto" data-icon="construction"><span>Ver detalles</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      </div>
-      <div class="pf-body">
-        <h3 class="pf-name">Gestor de Ingresos y Gastos</h3>
-        <p class="pf-desc">Sub-agente que registra ingresos y gastos en una hoja de cálculo y genera gráficas automáticas para visualizar los mayores gastos.</p>
-        <div class="pf-tech-tags"><span>n8n</span><span>Google Sheets</span><span>Gráficas automáticas</span></div>
-        <div class="pf-actions">
-          <a href="#" class="pf-link pf-link-soon" data-msg="🔒 Video disponible muy pronto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
-          <button class="pf-expand-btn" data-id="5">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-        </div>
-        <div class="pf-detail" id="detail-5">
-          <div class="pf-detail-inner">
-            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Llevar el control de ingresos y gastos a mano dificultaba identificar rápidamente en qué se estaba gastando más.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Este sub-agente registra cada movimiento en una tabla de Google Sheets y genera gráficas automáticas que muestran los mayores gastos de un vistazo.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Visibilidad clara e inmediata de gastos e ingresos, sin necesidad de armar reportes manuales.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECT 7 — Generador de bases de datos -->
-    <div class="pf-card" data-cat="automatizacion" data-id="6">
-      <div class="pf-img-wrap">
-        <div class="pf-img-placeholder pf-img-1"></div>
-        <div class="pf-img-overlay"></div>
-        <span class="pf-badge">Automatización</span>
-        <div class="pf-hover-cta pf-hover-cta-soon" data-msg="🚧 Detalles disponibles muy pronto" data-icon="construction"><span>Ver detalles</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      </div>
-      <div class="pf-body">
-        <h3 class="pf-name">Generador de Cuadros por Prompt</h3>
-        <p class="pf-desc">Sub-agente asistente de Work: crea la estructura de bases de datos necesaria para generar cuadros de análisis a partir de un simple prompt.</p>
-        <div class="pf-tech-tags"><span>n8n</span><span>PostgreSQL</span><span>Prompts dinámicos</span></div>
-        <div class="pf-actions">
-          <a href="#" class="pf-link pf-link-soon" data-msg="🔒 Video disponible muy pronto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
+          <a href="https://youtu.be/jIuB26NS_jI" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
+          <a href="https://github.com/EndersenAcevedo/n8n-proyects" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>Código</a>
           <button class="pf-expand-btn" data-id="6">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
         </div>
         <div class="pf-detail" id="detail-6">
           <div class="pf-detail-inner">
-            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Cada nuevo tipo de cuadro de análisis para Work requería crear manualmente la estructura de base de datos correspondiente.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Este sub-agente asiste a Work generando automáticamente la estructura de base de datos necesaria a partir de un simple prompt en lenguaje natural.</p></div>
-            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Nuevos cuadros de análisis listos en segundos, sin escribir estructura de base de datos manualmente.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Encontrar las ventas sin procesar implicaba revisar a mano un reporte PDF de decenas de páginas.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Un flujo en n8n extrae el texto del PDF, identifica cada venta pendiente y arma una hoja con artículo, fecha, monto y un comentario listo para gestionar.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Un reporte de 31 páginas procesado en 53 segundos con un solo mensaje de WhatsApp.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 8 — Work: Reportes de inventario por imagen -->
+    <div class="pf-card" data-cat="ia automatizacion" data-id="7">
+      <div class="pf-img-wrap">
+        <img src="asset/proyectos/work.jpg" alt="Work — Reportes de Inventario por Imagen" class="pf-img-placeholder" loading="lazy" />
+        <div class="pf-img-overlay"></div>
+        <span class="pf-badge">Automatización</span>
+        <a href="https://youtu.be/FjBgo7spWco" target="_blank" class="pf-hover-cta"><span>Ver video</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      </div>
+      <div class="pf-body">
+        <h3 class="pf-name">Work — Reportes de Inventario por Imagen</h3>
+        <p class="pf-desc">Sub-agente que lee con IA una foto de la pantalla del sistema y genera los reportes de inventario en Google Sheets, listos para revisar y firmar.</p>
+        <div class="pf-tech-tags"><span>n8n</span><span>Mistral AI</span><span>Google Sheets</span><span>PostgreSQL</span><span>Análisis de imagen</span></div>
+        <div class="pf-actions">
+          <a href="https://youtu.be/FjBgo7spWco" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
+          <a href="https://github.com/EndersenAcevedo/n8n-proyects" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>Código</a>
+          <button class="pf-expand-btn" data-id="7">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        </div>
+        <div class="pf-detail" id="detail-7">
+          <div class="pf-detail-inner">
+            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Llenar los reportes de ajustes de inventario obligaba a transcribir a mano datos que ya aparecían en la pantalla del sistema.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Work recibe la captura por WhatsApp, extrae artículos, cantidades y costos con IA y llena las plantillas de reporte en Google Sheets, con PostgreSQL para el registro histórico.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Reportes listos en segundos, a pedido desde el chat, sin transcripción manual.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 9 — Finanzas: Gestor de ingresos y gastos -->
+    <div class="pf-card" data-cat="automatizacion" data-id="8">
+      <div class="pf-img-wrap">
+        <img src="asset/proyectos/finanzas.jpg" alt="Finanzas — Gastos e Ingresos por WhatsApp" class="pf-img-placeholder" loading="lazy" />
+        <div class="pf-img-overlay"></div>
+        <span class="pf-badge">Automatización</span>
+        <a href="https://youtu.be/G2hvI5nVlcM" target="_blank" class="pf-hover-cta"><span>Ver video</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      </div>
+      <div class="pf-body">
+        <h3 class="pf-name">Finanzas — Gastos e Ingresos por WhatsApp</h3>
+        <p class="pf-desc">Sub-agente que registra ingresos y gastos escritos en lenguaje natural y responde al instante con el balance del mes, con gráficas automáticas.</p>
+        <div class="pf-tech-tags"><span>n8n</span><span>IA</span><span>Google Sheets</span><span>Gráficas automáticas</span></div>
+        <div class="pf-actions">
+          <a href="https://youtu.be/G2hvI5nVlcM" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver video</a>
+          <a href="https://github.com/EndersenAcevedo/n8n-proyects" target="_blank" class="pf-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>Código</a>
+          <button class="pf-expand-btn" data-id="8">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        </div>
+        <div class="pf-detail" id="detail-8">
+          <div class="pf-detail-inner">
+            <div class="pf-detail-col"><div class="pf-detail-label problem">⊘ Problema</div><p>Llevar el control de ingresos y gastos a mano dificultaba ver rápidamente en qué se estaba gastando más.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label solution">◎ Solución</div><p>Basta escribir, por ejemplo, «créame un gasto por $50 en gasolina, en efectivo»: la IA clasifica el movimiento, lo registra en Google Sheets y actualiza las gráficas.</p></div>
+            <div class="pf-detail-col"><div class="pf-detail-label result">▲ Resultado</div><p>Registro inmediato y balance del mes en la misma conversación, sin armar reportes manuales.</p></div>
           </div>
         </div>
       </div>

@@ -72,7 +72,7 @@
   background-size: cover; background-position: center;
   transition: transform .5s cubic-bezier(.25,.46,.45,.94);
 }
-.pf-card:hover .pf-img-placeholder { transform: scale(1.06); }
+img.pf-img-placeholder { display: block; object-fit: cover; }
 
 /* Unique gradient thumbnails per project (replace with real images via bg-image) */
 .pf-img-1 { background: linear-gradient(135deg, #0a1628 0%, #1a3a6e 40%, #2196f3 100%); }
