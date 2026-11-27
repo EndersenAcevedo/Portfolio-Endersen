@@ -58,7 +58,7 @@
 .tsl-quote-icon {
   font-size: 64px;
   font-weight: 900;
-  color: rgba(255,69,0,.18);
+  color: rgba(255, 106, 26,.18);
   font-family: 'Georgia', serif;
   line-height: 1;
   user-select: none;
@@ -137,7 +137,7 @@
 .tsl-btn:hover {
   border-color: var(--orange);
   color: var(--orange);
-  background: rgba(255,69,0,.07);
+  background: rgba(255, 106, 26,.07);
   transform: scale(1.08);
 }
 
@@ -158,7 +158,7 @@
 .tsl-dot.active {
   background: var(--orange);
   width: 28px;
-  box-shadow: 0 0 10px rgba(255,69,0,.5);
+  box-shadow: 0 0 10px rgba(255, 106, 26,.5);
 }
 
 /* ══════════════════════════════════════════
@@ -196,8 +196,8 @@
 }
 
 .pq-card:hover {
-  border-color: rgba(255,69,0,.5);
-  box-shadow: 0 16px 48px rgba(255,69,0,.12), 0 4px 16px rgba(0,0,0,.5);
+  border-color: rgba(255, 106, 26,.5);
+  box-shadow: 0 16px 48px rgba(255, 106, 26,.12), 0 4px 16px rgba(0,0,0,.5);
   transform: translateY(-5px);
 }
 
@@ -221,7 +221,7 @@
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,69,0,.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 106, 26,.14) 0%, transparent 70%);
   pointer-events: none;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -247,8 +247,8 @@
   transition: border-color .25s, background .25s, transform .25s;
 }
 .pq-card:hover .pq-icon {
-  border-color: rgba(255,69,0,.5);
-  background: rgba(255,69,0,.08);
+  border-color: rgba(255, 106, 26,.5);
+  background: rgba(255, 106, 26,.08);
   transform: scale(1.1) rotate(-4deg);
 }
 

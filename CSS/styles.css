@@ -1,18 +1,18 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0d0d0d;
-  --bg2: #141414;
-  --bg3: #1a1a1a;
-  --card: #161616;
-  --card2: #1e1e1e;
-  --orange: #ff4500;
-  --orange-dim: #cc3700;
+  --bg: #0B1626;
+  --bg2: #0F1C33;
+  --bg3: #13223D;
+  --card: #111E36;
+  --card2: #172744;
+  --orange: #FF6A1A;
+  --orange-dim: #E2560C;
   --green: #22c55e;
   --red: #ef4444;
   --text: #f0f0f0;
-  --muted: #888;
-  --border: #2a2a2a;
+  --muted: #9AA6BA;
+  --border: #24365A;
   --nav-height: 62px;
 }
 
@@ -48,7 +48,7 @@ svg { display: inline-block; vertical-align: middle; }
   justify-content: space-between;
   padding: 0 40px;
   height: var(--nav-height);
-  background: rgba(13, 13, 13, 0.95);
+  background: rgba(11, 22, 38, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -114,7 +114,7 @@ svg { display: inline-block; vertical-align: middle; }
 .nav-link-icon.active {
   border-color: var(--orange);
   color: var(--orange);
-  background: rgba(255,69,0,.12);
+  background: rgba(255, 106, 26,.12);
 }
 
 .nav-right {
@@ -451,7 +451,7 @@ section {
 .term-line .ok { color: var(--green); }
 .term-line .warn { color: #f59e0b; }
 .term-line.highlighted {
-  background: rgba(255, 69, 0, .12);
+  background: rgba(255, 106, 26, .12);
   color: #ccc;
   border-radius: 2px;
   padding: 0 2px;
@@ -585,7 +585,7 @@ section {
   left: 0 !important;
   right: 0 !important;
   z-index: 9999 !important;
-  background: rgba(13, 13, 13, 0.95) !important;
+  background: rgba(11, 22, 38, 0.95) !important;
   backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid var(--border) !important;
 }
@@ -607,8 +607,8 @@ section {
 .soon-toast {
   position: fixed;
   z-index: 100000;
-  background: rgba(13,13,13,.97);
-  border: 1px solid rgba(255,69,0,.4);
+  background: rgba(11, 22, 38,.97);
+  border: 1px solid rgba(255, 106, 26,.4);
   border-radius: 12px;
   padding: 12px 18px;
   font-size: 13px;
@@ -617,7 +617,7 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(255,69,0,.1);
+  box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(255, 106, 26,.1);
   opacity: 0;
   transform: translateY(8px) scale(.96);
   transition: opacity .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1);

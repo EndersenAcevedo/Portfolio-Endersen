@@ -82,10 +82,10 @@
 
 /* Hover lift */
 .srv-card:hover {
-  border-color: rgba(255,69,0,.55);
+  border-color: rgba(255, 106, 26,.55);
   transform: translateY(-6px) scale(1.01);
   box-shadow:
-    0 16px 48px rgba(255,69,0,.14),
+    0 16px 48px rgba(255, 106, 26,.14),
     0 4px 12px rgba(0,0,0,.5);
   background: #191919;
 }
@@ -95,7 +95,7 @@
   position: absolute;
   width: 300px; height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,69,0,.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 106, 26,.18) 0%, transparent 70%);
   pointer-events: none;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -119,22 +119,22 @@
 
 /* ── Featured card ── */
 .srv-featured {
-  border-color: rgba(255,69,0,.35);
+  border-color: rgba(255, 106, 26,.35);
   background: #161410;
 }
 .srv-featured:hover {
   border-color: var(--orange);
   box-shadow:
-    0 0 0 1px rgba(255,69,0,.3),
-    0 20px 60px rgba(255,69,0,.2),
+    0 0 0 1px rgba(255, 106, 26,.3),
+    0 20px 60px rgba(255, 106, 26,.2),
     0 4px 12px rgba(0,0,0,.5);
 }
 
 .srv-featured-badge {
   position: absolute;
   top: 18px; right: 18px;
-  background: rgba(255,69,0,.15);
-  border: 1px solid rgba(255,69,0,.35);
+  background: rgba(255, 106, 26,.15);
+  border: 1px solid rgba(255, 106, 26,.35);
   color: var(--orange);
   font-size: 11px;
   font-weight: 700;
@@ -157,8 +157,8 @@
   flex-shrink: 0;
 }
 .srv-card:hover .srv-icon-wrap {
-  border-color: rgba(255,69,0,.5);
-  background: rgba(255,69,0,.08);
+  border-color: rgba(255, 106, 26,.5);
+  background: rgba(255, 106, 26,.08);
   transform: scale(1.1) rotate(-5deg);
 }
 
@@ -209,7 +209,7 @@
   content: '';
   display: inline-flex;
   width: 16px; height: 16px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4500' stroke-width='2.5'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF6A1A' stroke-width='2.5'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
   flex-shrink: 0;
 }
 
@@ -262,7 +262,7 @@
   border-color: var(--orange);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(255,69,0,.3);
+  box-shadow: 0 6px 24px rgba(255, 106, 26,.3);
 }
 .srv-btn:hover::before { transform: scaleX(1); }
 
@@ -271,13 +271,13 @@
   background: var(--orange);
   border-color: var(--orange);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(255,69,0,.35);
+  box-shadow: 0 4px 20px rgba(255, 106, 26,.35);
 }
 .srv-btn-filled::before { display: none; }
 .srv-btn-filled:hover {
   background: #e03d00;
   border-color: #e03d00;
-  box-shadow: 0 8px 32px rgba(255,69,0,.5);
+  box-shadow: 0 8px 32px rgba(255, 106, 26,.5);
   transform: translateY(-2px);
   color: #fff;
 }
@@ -313,7 +313,7 @@
   position: relative;
   overflow: hidden;
   transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
-  box-shadow: 0 4px 24px rgba(255,69,0,.35);
+  box-shadow: 0 4px 24px rgba(255, 106, 26,.35);
 }
 
 /* Shine sweep */
@@ -326,7 +326,7 @@
 }
 .srv-cta-btn:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(255,69,0,.5);
+  box-shadow: 0 12px 40px rgba(255, 106, 26,.5);
 }
 .srv-cta-btn:hover::before { left: 150%; }
 .srv-cta-btn svg { transition: transform .2s ease; }

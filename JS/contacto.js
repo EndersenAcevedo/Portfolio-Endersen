@@ -40,7 +40,7 @@
     ctx.beginPath();
     ctx.moveTo(a.x, a.y);
     ctx.lineTo(b.x, b.y);
-    ctx.strokeStyle = `rgba(255,69,0,${(1 - dist / 140) * 0.12})`;
+    ctx.strokeStyle = `rgba(255, 106, 26,${(1 - dist / 140) * 0.12})`;
     ctx.lineWidth = 0.6;
     ctx.stroke();
   }
@@ -58,7 +58,7 @@
       // Draw dot
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,69,0,${p.alpha})`;
+      ctx.fillStyle = `rgba(255, 106, 26,${p.alpha})`;
       ctx.fill();
 
       // Connect nearby

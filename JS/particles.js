@@ -137,9 +137,9 @@ class ParticleNetwork {
                 p.x - p.radius * 0.3, p.y - p.radius * 0.3, 0,
                 p.x, p.y, p.radius * 2
             );
-            gradient.addColorStop(0, 'rgba(255, 69, 0, 0.9)');
-            gradient.addColorStop(0.5, 'rgba(255, 69, 0, 0.5)');
-            gradient.addColorStop(1, 'rgba(255, 69, 0, 0)');
+            gradient.addColorStop(0, 'rgba(255, 106, 26, 0.9)');
+            gradient.addColorStop(0.5, 'rgba(255, 106, 26, 0.5)');
+            gradient.addColorStop(1, 'rgba(255, 106, 26, 0)');
             this.ctx.fillStyle = gradient;
             this.ctx.fill();
             
@@ -165,7 +165,7 @@ class ParticleNetwork {
                     this.ctx.beginPath();
                     this.ctx.moveTo(p1.x, p1.y);
                     this.ctx.lineTo(p2.x, p2.y);
-                    this.ctx.strokeStyle = `rgba(255, 69, 0, ${opacity * 0.5})`;
+                    this.ctx.strokeStyle = `rgba(255, 106, 26, ${opacity * 0.5})`;
                     this.ctx.lineWidth = 0.8;
                     this.ctx.stroke();
                     

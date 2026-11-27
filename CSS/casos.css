@@ -67,8 +67,8 @@
 }
 
 .caso-card:hover {
-  border-color: rgba(255,69,0,.55);
-  box-shadow: 0 24px 64px rgba(255,69,0,.13), 0 4px 20px rgba(0,0,0,.6);
+  border-color: rgba(255, 106, 26,.55);
+  box-shadow: 0 24px 64px rgba(255, 106, 26,.13), 0 4px 20px rgba(0,0,0,.6);
   transform: translateY(-6px);
 }
 
@@ -115,7 +115,7 @@
 /* ── Scan line animation ── */
 .caso-scan {
   position:absolute; top:0; left:0; right:0; height:2px;
-  background: linear-gradient(90deg, transparent, rgba(255,69,0,.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 106, 26,.8), transparent);
   transform: translateY(-2px);
   opacity: 0;
   transition: opacity .3s;
@@ -132,9 +132,9 @@
 /* ── Result chip ── */
 .caso-result-chip {
   position: absolute; bottom: 16px; left: 16px; z-index:4;
-  background: rgba(10,10,10,.88);
+  background: rgba(9, 18, 32,.88);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,69,0,.35);
+  border: 1px solid rgba(255, 106, 26,.35);
   border-radius: 10px;
   padding: 8px 14px;
   display: flex; flex-direction:column; gap:2px;
@@ -143,7 +143,7 @@
 .caso-card:hover .caso-result-chip {
   border-color: var(--orange);
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(255,69,0,.25);
+  box-shadow: 0 8px 24px rgba(255, 106, 26,.25);
 }
 .crk-label { font-size:10px; color:var(--muted); font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.08em; }
 .crk-value { font-size:20px; font-weight:900; color:var(--orange); line-height:1.1; }
@@ -167,12 +167,12 @@
   transition: all .2s;
 }
 .ctag-orange {
-  border-color:rgba(255,69,0,.4); color:var(--orange);
-  background:rgba(255,69,0,.06);
+  border-color:rgba(255, 106, 26,.4); color:var(--orange);
+  background:rgba(255, 106, 26,.06);
 }
 .caso-card:hover .ctag-orange {
-  border-color:rgba(255,69,0,.7);
-  background:rgba(255,69,0,.12);
+  border-color:rgba(255, 106, 26,.7);
+  background:rgba(255, 106, 26,.12);
 }
 
 /* Result line */
@@ -204,14 +204,14 @@
   display:flex; flex-direction:column; align-items:center; gap:4px;
   transition:background .2s;
 }
-.caso-card:hover .cm-item { background:#1a1a1a; }
+.caso-card:hover .cm-item { background:#13223D; }
 .cm-val { font-size:20px; font-weight:900; color:var(--orange); font-variant-numeric:tabular-nums; }
 .cm-key { font-size:10px; color:var(--muted); text-align:center; font-family:'JetBrains Mono',monospace; }
 
 /* ── CTA STRIP ── */
 .casos-cta {
   background: linear-gradient(135deg, #161410 0%, #1a1410 50%, #1a1208 100%);
-  border: 1px solid rgba(255,69,0,.3);
+  border: 1px solid rgba(255, 106, 26,.3);
   border-radius: 20px;
   padding: 2px;
   position: relative;
@@ -220,7 +220,7 @@
 .casos-cta::before {
   content:'';
   position:absolute; inset:0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(255,69,0,.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 30% 50%, rgba(255, 106, 26,.08) 0%, transparent 60%);
   pointer-events:none;
 }
 .casos-cta-inner {
@@ -239,7 +239,7 @@
   font-family:'Inter',sans-serif; cursor:pointer;
   position:relative; overflow:hidden;
   transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
-  box-shadow: 0 4px 24px rgba(255,69,0,.35);
+  box-shadow: 0 4px 24px rgba(255, 106, 26,.35);
   white-space:nowrap;
 }
 .casos-cta-btn::before {
@@ -249,7 +249,7 @@
   transform:translateX(-100%);
   transition:transform .5s ease;
 }
-.casos-cta-btn:hover { transform:translateY(-3px) scale(1.04); box-shadow:0 12px 40px rgba(255,69,0,.5); }
+.casos-cta-btn:hover { transform:translateY(-3px) scale(1.04); box-shadow:0 12px 40px rgba(255, 106, 26,.5); }
 .casos-cta-btn:hover::before { transform:translateX(100%); }
 .casos-cta-btn svg { transition:transform .2s; }
 .casos-cta-btn:hover svg { transform:translate(3px,-3px); }

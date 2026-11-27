@@ -23,12 +23,12 @@
 }
 .ptab::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at center, rgba(255,69,0,.15), transparent 70%);
+  background: radial-gradient(circle at center, rgba(255, 106, 26,.15), transparent 70%);
   opacity: 0; transition: opacity .22s;
 }
 .ptab:hover { color: var(--text); border-color: #555; }
 .ptab:hover::before { opacity: 1; }
-.ptab.active { background: var(--orange); border-color: var(--orange); color: #fff; box-shadow: 0 0 18px rgba(255,69,0,.4); }
+.ptab.active { background: var(--orange); border-color: var(--orange); color: #fff; box-shadow: 0 0 18px rgba(255, 106, 26,.4); }
 
 /* ── GRID ── */
 .pf-grid {
@@ -54,8 +54,8 @@
   to   { opacity:1; transform:translateY(0) scale(1); }
 }
 .pf-card:hover {
-  border-color: rgba(255,69,0,.5);
-  box-shadow: 0 20px 60px rgba(255,69,0,.12), 0 4px 20px rgba(0,0,0,.5);
+  border-color: rgba(255, 106, 26,.5);
+  box-shadow: 0 20px 60px rgba(255, 106, 26,.12), 0 4px 20px rgba(0,0,0,.5);
   transform: translateY(-4px);
 }
 
@@ -80,7 +80,7 @@ img.pf-img-placeholder { display: block; object-fit: cover; }
 .pf-img-2 { background: linear-gradient(135deg, #0d1f0d 0%, #1a3d1a 40%, #00c853 100%); }
 .pf-img-3 { background: linear-gradient(135deg, #1a0a00 0%, #4a1500 40%, #ff6d00 100%); }
 .pf-img-4 { background: linear-gradient(135deg, #0a0a1a 0%, #1a1a4a 40%, #7c4dff 100%); }
-.pf-img-5 { background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 40%, #512bd4 100%); }
+.pf-img-5 { background: linear-gradient(135deg, #0B1626 0%, #1a1a2e 40%, #512bd4 100%); }
 .pf-img-6 { background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 40%, #ff6f00 70%, #b71c1c 100%); }
 
 /* Decorative SVG illustration inside image */
@@ -99,27 +99,27 @@ img.pf-img-placeholder { display: block; object-fit: cover; }
 /* ── BADGE (category tag top-right) ── */
 .pf-badge {
   position: absolute; top: 14px; right: 14px; z-index: 2;
-  background: rgba(13,13,13,.82); backdrop-filter: blur(8px);
+  background: rgba(11, 22, 38,.82); backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,.2);
   color: #fff; font-size: 12px; font-weight: 700;
   padding: 4px 12px; border-radius: 20px;
   font-family: 'JetBrains Mono', monospace;
   transition: background .25s, border-color .25s;
 }
-.pf-card:hover .pf-badge { background: rgba(255,69,0,.85); border-color: var(--orange); }
+.pf-card:hover .pf-badge { background: rgba(255, 106, 26,.85); border-color: var(--orange); }
 
 /* ── HOVER CTA overlay ── */
 .pf-hover-cta {
   position: absolute; inset: 0; z-index: 3;
   display: flex; align-items: center; justify-content: center; gap: 8px;
   font-size: 14px; font-weight: 700; color: #fff;
-  background: rgba(255,69,0,.0);
+  background: rgba(255, 106, 26,.0);
   opacity: 0;
   transition: opacity .3s ease, background .3s ease;
   pointer-events: none;
   cursor: pointer;
 }
-.pf-card:hover .pf-hover-cta { opacity: 1; background: rgba(255,69,0,.08); pointer-events: auto; }
+.pf-card:hover .pf-hover-cta { opacity: 1; background: rgba(255, 106, 26,.08); pointer-events: auto; }
 
 /* ── BODY ── */
 .pf-body { padding: 20px 22px 22px; }
@@ -143,7 +143,7 @@ img.pf-img-placeholder { display: block; object-fit: cover; }
   padding: 3px 10px; font-size: 11px; color: var(--muted);
   transition: border-color .2s, color .2s;
 }
-.pf-card:hover .pf-tech-tags span { border-color: rgba(255,69,0,.3); color: #ccc; }
+.pf-card:hover .pf-tech-tags span { border-color: rgba(255, 106, 26,.3); color: #ccc; }
 
 /* ── Actions row ── */
 .pf-actions {
