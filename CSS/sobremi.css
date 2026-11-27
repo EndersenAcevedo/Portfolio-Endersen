@@ -64,7 +64,7 @@
 .photo-fallback {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(160deg, #1a1a1a 0%, #0f0f0f 60%, rgba(255,69,0,.08) 100%);
+  background: linear-gradient(160deg, #13223D 0%, #0f0f0f 60%, rgba(255, 106, 26,.08) 100%);
   color: var(--border);
 }
 
@@ -79,7 +79,7 @@
 /* experience badge */
 .photo-badge {
   position: absolute; bottom: 20px; right: 20px; z-index: 2;
-  background: rgba(20,20,20,.92);
+  background: rgba(15, 28, 51,.92);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -141,9 +141,9 @@
 .tag:hover {
   color: var(--orange);
   border-color: var(--orange);
-  background: rgba(255, 69, 0, 0.07);
+  background: rgba(255, 106, 26, 0.07);
   transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 4px 16px rgba(255, 69, 0, 0.18);
+  box-shadow: 0 4px 16px rgba(255, 106, 26, 0.18);
 }
 
 /* ═══════════════════════════════════════════
@@ -206,7 +206,7 @@
 .tl-circle-active {
   border-color: var(--orange);
   color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(255,69,0,.15);
+  box-shadow: 0 0 0 3px rgba(255, 106, 26,.15);
 }
 
 .tl-line {
@@ -257,8 +257,8 @@
 .timeline-item:hover .tl-circle {
   border-color: var(--orange);
   color: var(--orange);
-  background: rgba(255,69,0,.07);
-  box-shadow: 0 0 0 4px rgba(255,69,0,.12);
+  background: rgba(255, 106, 26,.07);
+  box-shadow: 0 0 0 4px rgba(255, 106, 26,.12);
   transform: scale(1.08);
 }
 
