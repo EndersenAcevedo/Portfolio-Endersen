@@ -4,6 +4,10 @@
 const WEBHOOK_VISIT   = '';   // webhook de n8n para registrar visitas
 const WEBHOOK_CONTACT = '';   // webhook de n8n del formulario de contacto
 
+// Asistente Sox: URL de producción del webhook de n8n (flujo n8n/sox-portafolio.json).
+// Si está vacía, Sox funciona solo con botones y palabras clave (sin IA).
+const SOX_WEBHOOK = '';
+
 // Umami (analíticas). Si UMAMI_WEBSITE_ID está vacío, el script no se carga.
 const UMAMI_URL        = 'https://analytics.endanus.online';
 const UMAMI_WEBSITE_ID = '';

@@ -1,0 +1,200 @@
+{
+  "name": "Sox · Asistente del portafolio",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sox-portafolio",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://endanus.online,https://www.endanus.online"
+        }
+      },
+      "id": "548cf38f-16c0-4962-a772-83783a563dc8",
+      "name": "Webhook Sox",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ],
+      "webhookId": "10d2a208-27d0-4643-afea-462f3246932b"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lee el mensaje, recorta el historial y aplica límites diarios (por IP y total).\nconst req = $input.first().json;\nlet body = req.body;\nif (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }\nbody = body || {};\nconst mensaje = String(body.mensaje || '').trim().slice(0, 200);\nconst historial = Array.isArray(body.historial) ? body.historial.slice(-4) : [];\nconst h = req.headers || {};\nconst ip = String(h['cf-connecting-ip'] || h['x-real-ip'] || String(h['x-forwarded-for'] || '').split(',')[0] || 'desconocida').trim();\n\nconst LIMITE_POR_IP = 20;     // preguntas a la IA por visitante al día\nconst LIMITE_TOTAL = 300;     // preguntas a la IA en total al día\nconst dia = new Date().toISOString().slice(0, 10);\nconst st = $getWorkflowStaticData('global');\nif (st.dia !== dia) { st.dia = dia; st.total = 0; st.ips = {}; }\nconst usadas = st.ips[ip] || 0;\n\nif (!mensaje) return [{ json: { bloqueado: true, motivo: 'vacio' } }];\nif (usadas >= LIMITE_POR_IP || st.total >= LIMITE_TOTAL) return [{ json: { bloqueado: true, motivo: 'limite' } }];\nst.ips[ip] = usadas + 1;\nst.total += 1;\n\nconst SYSTEM = \"Eres Sox, el asistente del portafolio web de Daniel Acevedo, desarrollador full stack y de automatización con IA en El Salvador (marca Endanus). Solo hablas de: sus proyectos (Nexo: plataforma web de microservicios con asistentes de IA; Sox: agente de WhatsApp hecho en n8n; Finanzas: gastos por WhatsApp con voz o foto; MVPs en AWS; IA Studio; servidor propio con Docker y n8n), sus servicios (apps web con IA, automatizaciones, reportes, cloud), sus tecnologías y cómo contactarlo. Si preguntan cualquier otra cosa, responde exactamente: Solo puedo ayudarte con el portafolio de Daniel. ¿Te muestro sus proyectos? Responde en español, en máximo 2 frases cortas. No inventes precios, clientes ni datos. Devuelve solo JSON: {\\\"mensaje\\\":\\\"texto\\\",\\\"ir_a\\\":\\\"pagina o vacío\\\"}. ir_a solo puede ser: inicio.html, portafolio.html, servicios.html, contacto.html, sobremi.html, stack.html, casos.html, clientes.html.\";\nconst messages = [{ role: 'system', content: SYSTEM }];\nfor (const m of historial) {\n  const texto = String((m && m.texto) || '').slice(0, 200);\n  if (texto) messages.push({ role: m.rol === 'usuario' ? 'user' : 'assistant', content: texto });\n}\nmessages.push({ role: 'user', content: mensaje });\n\nreturn [{ json: {\n  bloqueado: false,\n  payload: { model: 'gpt-4o-mini', temperature: 0.3, max_tokens: 120, response_format: { type: 'json_object' }, messages }\n} }];"
+      },
+      "id": "52af5b3e-5476-4fee-8863-08a278bd18ee",
+      "name": "Validar y limitar",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.bloqueado }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "c2b792a3-5c87-49b7-896b-a909d0faed45",
+      "name": "¿Bloqueado?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        480,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const m = $input.first().json.motivo;\nreturn [{ json: {\n  mensaje: m === 'limite'\n    ? 'Por hoy ya respondí muchas preguntas. Te puedo llevar a Proyectos, Servicios o Contacto con los botones.'\n    : '¿Qué te gustaría ver del portafolio de Daniel?',\n  ir_a: ''\n} }];"
+      },
+      "id": "5eb87e98-7375-469f-a9f3-3a3a987964b3",
+      "name": "Mensaje de límite",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "30c7ff4f-5380-490e-a387-94a8fbb0a328",
+      "name": "GPT-4o mini",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        420
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Toma la respuesta del modelo, valida la página y deja un mensaje seguro si algo falla.\nconst PAGINAS = ['inicio.html','portafolio.html','servicios.html','contacto.html','sobremi.html','stack.html','casos.html','clientes.html'];\nconst r = $input.first().json || {};\nlet out = { mensaje: 'Ahora no pude responder eso, pero te puedo llevar a Proyectos, Servicios o Contacto.', ir_a: '' };\ntry {\n  const txt = r.choices && r.choices[0] && r.choices[0].message && r.choices[0].message.content;\n  const d = JSON.parse(txt || '{}');\n  if (typeof d.mensaje === 'string' && d.mensaje.trim()) out.mensaje = d.mensaje.trim().slice(0, 400);\n  const ir = typeof d.ir_a === 'string' ? d.ir_a.trim().toLowerCase() : '';\n  out.ir_a = PAGINAS.includes(ir) ? ir : '';\n} catch (e) { /* se queda el mensaje seguro */ }\nreturn [{ json: out }];"
+      },
+      "id": "f71c992a-3001-464b-a2c0-22fc333b3686",
+      "name": "Formatear respuesta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "22b9f564-5e0e-4faa-a058-299e3915876c",
+      "name": "Responder",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Sox": {
+      "main": [
+        [
+          {
+            "node": "Validar y limitar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar y limitar": {
+      "main": [
+        [
+          {
+            "node": "¿Bloqueado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Bloqueado?": {
+      "main": [
+        [
+          {
+            "node": "Mensaje de límite",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GPT-4o mini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensaje de límite": {
+      "main": [
+        [
+          {
+            "node": "Responder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT-4o mini": {
+      "main": [
+        [
+          {
+            "node": "Formatear respuesta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatear respuesta": {
+      "main": [
+        [
+          {
+            "node": "Responder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false
+}

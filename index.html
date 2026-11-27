@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Acevedo — Habla con Sox</title>
+  <meta name="description" content="Portafolio de Daniel Acevedo, desarrollador full stack y de automatización con IA. Pregúntale a Sox y te lleva a lo que buscas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/chat.css?v=1" />
+</head>
+<body data-nonav data-sox-widget="off">
+
+<div class="ch-page">
+  <header class="ch-top">
+    <a class="ch-brand" href="inicio.html" aria-label="Endanus — ir al inicio">
+      <img src="asset/sox/epsilon.webp" alt="" width="22" height="76" />
+      <span class="ch-brand-txt"><span class="ch-word">Endanus</span><span class="ch-tag">TECH SOLUTIONS</span></span>
+    </a>
+    <a class="ch-enter" href="inicio.html" data-umami-event="chat-entrar-sitio">
+      Entrar al sitio
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
+  </header>
+
+  <main class="ch-main">
+    <div class="ch-sox" aria-hidden="true">
+      <img class="ch-beam" src="asset/sox/base.webp" alt="" width="700" height="787" />
+      <img class="ch-face" id="ch-face" src="asset/sox/sox-smile.webp" alt="" width="700" height="700" />
+    </div>
+
+    <div class="ch-hello">
+      <h1>Hola, soy <span>Sox</span></h1>
+      <p>Te muestro el trabajo de Daniel Acevedo. ¿Qué quieres ver?</p>
+    </div>
+
+    <div class="ch-log" id="ch-log" aria-live="polite"></div>
+
+    <div class="ch-chips" id="ch-chips"></div>
+
+    <form class="ch-form" id="ch-form">
+      <label class="ch-sr" for="ch-q">Escríbele a Sox</label>
+      <input id="ch-q" type="text" maxlength="200" autocomplete="off" placeholder="Pregúntale a Sox por proyectos, servicios o contacto…" />
+      <button type="submit" aria-label="Enviar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </button>
+    </form>
+    <p class="ch-note">Sox responde solo sobre el portafolio de Daniel.</p>
+  </main>
+</div>
+
+<script src="JS/config.js"></script>
+<script src="JS/sox.js?v=1" data-sox="1"></script>
+<script src="JS/navbar.js"></script>
+<script src="JS/chat.js?v=1"></script>
+</body>
+</html>
