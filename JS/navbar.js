@@ -72,7 +72,7 @@ function loadNavbar() {
     const navHTML = `
     <nav class="nav-principal">
       <button class="nav-logo" onclick="navigateTo('index.html')">
-        <img src="asset/sox/epsilon-nav.png?v=5" alt="Endanus" class="nav-logo-badge" width="30" height="40">
+        <img src="asset/sox/epsilon-nav.png?v=6" alt="Endanus" class="nav-logo-badge" width="25" height="54">
         <span class="nav-logo-name">Daniel Acevedo</span>
       </button>
       <div class="nav-links">

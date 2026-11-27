@@ -15,7 +15,7 @@ a { color: #FF8A47; }
 
 .ch-top { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 20px 28px; }
 .ch-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.ch-brand img { width: auto; height: 48px; filter: drop-shadow(0 0 10px rgba(255,106,26,.45)); }
+.ch-brand img { width: auto; height: 78px; filter: drop-shadow(0 0 10px rgba(255,106,26,.45)); }
 .ch-brand-txt { display: flex; flex-direction: column; line-height: 1; }
 .ch-word { font-family: 'Bricolage Grotesque', sans-serif; font-stretch: 78%; font-variation-settings: 'wdth' 78; font-size: 32px; font-weight: 800; color: #FFFFFF; }
 .ch-tag { font-size: 11px; letter-spacing: .42em; color: #FF6A1A; margin-top: 5px; }
