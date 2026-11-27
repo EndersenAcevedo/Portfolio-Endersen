@@ -77,7 +77,7 @@
   const KEY_GREET = 'sox_greet_v1';
   const KEY_POS = 'sox_pos_v1';
   const KEY_IA = 'sox_ia_count_v1';
-  const MAX_IA_PER_SESSION = 15;
+  const MAX_IA_PER_SESSION = 25;
   const KEY_BASIC = 'sox_basico_hasta_v1';
   const BASIC_MSG = 'Ese tipo de preguntas no las puedo responder por ahora, pero te llevo a donde quieras: Proyectos, Servicios, Contacto o el perfil de Daniel.';
 
@@ -97,6 +97,7 @@
   function loadChat() { return store.get(KEY_CHAT, []); }
   function saveChat(msgs) { store.set(KEY_CHAT, msgs.slice(-30)); }
 
+  // Respuestas sin IA: se usan en modo básico (sin servidor) o para órdenes claras de navegación.
   function localAnswer(q) {
     if (/^(hola|buenas|hey|qu[eé] tal|saludos)\b/i.test(q)) {
       return { mensaje: '¡Hola! ¿Te muestro sus proyectos o prefieres saber quién es Daniel?' };
@@ -106,6 +107,21 @@
     }
     const r = ROUTES.find(x => x.re.test(q));
     return r ? { mensaje: r.msg, ir_a: r.ir_a } : null;
+  }
+
+  // Orden de navegación clara ("llévame a proyectos", "contacto"): se resuelve sin gastar tokens.
+  function navCommand(q) {
+    const words = q.split(/\s+/).filter(Boolean).length;
+    const verb = /\b(ll[eé]vame|ir a|vamos a|mu[eé]strame|abre|abrir|quiero ver|ver los|ver la|ver el|regresa|vuelve|volver|regresar)\b/i.test(q);
+    if (words > 5 && !verb) return null;
+    const r = ROUTES.find(x => x.re.test(q));
+    return r ? { mensaje: r.msg, ir_a: r.ir_a } : null;
+  }
+
+  function visitorTime() {
+    try {
+      return new Date().toLocaleString('es-SV', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+    } catch (e) { return new Date().toString(); }
   }
 
   function cleanAnswer(data) {
@@ -119,26 +135,26 @@
   async function ask(q, history) {
     q = String(q || '').trim().slice(0, 200);
     if (!q) return null;
-    const local = localAnswer(q);
-    if (local) return local;
+    const nav = navCommand(q);
+    if (nav) return nav;
 
     const webhook = (typeof SOX_WEBHOOK !== 'undefined') ? SOX_WEBHOOK : '';
     const used = store.get(KEY_IA, 0);
     // Modo básico: sin IA (no hay webhook, se agotó el cupo o el servidor falló hace poco).
     if (!webhook || used >= MAX_IA_PER_SESSION || Date.now() < store.get(KEY_BASIC, 0)) {
-      return { mensaje: BASIC_MSG };
+      return localAnswer(q) || { mensaje: BASIC_MSG };
     }
     store.set(KEY_IA, used + 1);
     track('sox-pregunta-ia', { pagina: current });
 
-    const hist = (history || []).slice(-4).map(m => ({ rol: m.from === 'user' ? 'usuario' : 'sox', texto: String(m.text || '').slice(0, 200) }));
+    const hist = (history || []).slice(-6).map(m => ({ rol: m.from === 'user' ? 'usuario' : 'sox', texto: String(m.text || '').slice(0, 200) }));
     const ctrl = ('AbortController' in window) ? new AbortController() : null;
     const timer = setTimeout(() => ctrl && ctrl.abort(), 8000);
     try {
       const res = await fetch(webhook, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mensaje: q, historial: hist, pagina: current }),
+        body: JSON.stringify({ mensaje: q, historial: hist, pagina: current, hora: visitorTime() }),
         signal: ctrl ? ctrl.signal : undefined
       });
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -148,7 +164,7 @@
     } catch (e) {
       // El servidor no respondió: Sox pasa a modo básico 5 minutos para no hacer esperar al visitante.
       store.set(KEY_BASIC, Date.now() + 5 * 60 * 1000);
-      return { mensaje: BASIC_MSG };
+      return localAnswer(q) || { mensaje: BASIC_MSG };
     } finally {
       clearTimeout(timer);
     }
@@ -164,7 +180,7 @@
       }
       if (/^https?:/i.test(target)) { window.open(target, '_blank', 'noopener'); return; }
       if (typeof window.navigateTo === 'function') window.navigateTo(target); else location.href = target;
-    }, delay == null ? 900 : delay);
+    }, delay == null ? 1600 : delay);
   }
 
   function chipsFor(page) { return CHIPS[page] || CHIPS._default; }
@@ -181,7 +197,7 @@
 
     if (!document.querySelector('link[data-sox-css]')) {
       const l = document.createElement('link');
-      l.rel = 'stylesheet'; l.href = 'CSS/sox.css?v=2'; l.setAttribute('data-sox-css', '1');
+      l.rel = 'stylesheet'; l.href = 'CSS/sox.css?v=4'; l.setAttribute('data-sox-css', '1');
       document.head.appendChild(l);
     }
 

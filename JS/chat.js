@@ -59,13 +59,14 @@
   function soxSays(text, target) {
     msgs.push({ from: 'sox', text });
     keep(); talk(); render(target);
-    if (target) S.go(target, 1200);
+    if (target) S.go(target, 1700);
   }
 
   async function send(q) {
     q = String(q || '').trim();
     if (!q || busy) return;
     msgs.push({ from: 'user', text: q.slice(0, 200) });
+    document.body.classList.add('ch-conversando');
     busy = true; render();
     const ans = await S.ask(q, msgs.slice(0, -1));
     busy = false;
@@ -79,6 +80,7 @@
       if (busy) return;
       S.track('sox-opcion', { opcion: c.label, pagina: 'index.html' });
       msgs.push({ from: 'user', text: c.label });
+      document.body.classList.add('ch-conversando');
       soxSays('Te llevo a ' + (S.PAGES[c.ir_a] || c.label) + '.', c.ir_a);
     });
     chipsBox.appendChild(b);
