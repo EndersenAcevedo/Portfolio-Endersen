@@ -7,7 +7,7 @@
         "path": "sox-portafolio",
         "responseMode": "responseNode",
         "options": {
-          "allowedOrigins": "https://endanus.online,https://www.endanus.online"
+          "allowedOrigins": "https://portfolio.endanus.online,https://endanus.online,https://www.endanus.online"
         }
       },
       "id": "548cf38f-16c0-4962-a772-83783a563dc8",
