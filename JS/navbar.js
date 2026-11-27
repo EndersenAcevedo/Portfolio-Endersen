@@ -2,48 +2,69 @@
 // NAVBAR CENTRALIZADO
 // ─────────────────────────────────────────
 
-// ── FUNCIÓN DE NAVEGACIÓN CON ANIMACIÓN ──
-function navigateTo(url) {
-    // Prevenir si no hay URL
-    if (!url || url === '#') return;
-    
-    // Obtener la página actual
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
-    // Si ya estamos en esa página, no hacer nada
-    if (url === currentPage) return;
-    
-    // Crear overlay de transición
-    const overlay = document.createElement('div');
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #0B1626;
-        z-index: 99999;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateY(0);
-    `;
-    document.body.appendChild(overlay);
-    
-    // Forzar reflow para que la transición funcione
-    overlay.offsetHeight;
-    
-    // Efecto de salida: la página se oscurece y baja
-    requestAnimationFrame(() => {
-        overlay.style.opacity = '1';
-        overlay.style.transform = 'translateY(40px)';
-    });
-    
-    // Después de la animación de salida, redirigir
-    setTimeout(() => {
-        window.location.href = url;
-    }, 300);
+// ── TRANSICIÓN ÚNICA ENTRE PÁGINAS ──
+// Todas las navegaciones internas (enlaces, botones y Sox) se ven igual:
+// la página actual se funde a azul noche y la nueva aparece suavemente (CSS: pageIn).
+const PAGE_FADE_MS = 280;
+
+function pageFadeOverlay() {
+    let o = document.getElementById('page-fade');
+    if (!o) {
+        o = document.createElement('div');
+        o.id = 'page-fade';
+        o.style.cssText = 'position:fixed;inset:0;background:#0B1626;z-index:99999;opacity:0;pointer-events:none;transition:opacity ' + PAGE_FADE_MS + 'ms ease';
+        document.body.appendChild(o);
+    }
+    return o;
 }
+
+function leavePage(action) {
+    const o = pageFadeOverlay();
+    o.style.pointerEvents = 'auto';
+    o.offsetHeight; // fuerza el reflow para que la transición corra
+    requestAnimationFrame(() => { o.style.opacity = '1'; });
+    setTimeout(action, PAGE_FADE_MS);
+}
+
+function navigateTo(url) {
+    if (!url || url === '#') return;
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    if (url === currentPage) return;
+    leavePage(() => { window.location.href = url; });
+}
+
+// "Volver" con la misma transición.
+window.goBackSmooth = function () {
+    leavePage(() => { if (history.length > 1) history.back(); else window.location.href = 'inicio.html'; });
+};
+
+// Al volver con el botón atrás, el navegador puede restaurar la página con el velo puesto: se quita.
+window.addEventListener('pageshow', () => {
+    const o = document.getElementById('page-fade');
+    if (o) { o.style.opacity = '0'; o.style.pointerEvents = 'none'; }
+});
+
+// Enlaces internos (<a href="pagina.html">): usan la misma transición.
+// Va en fase de captura en window para adelantarse a Umami; el evento de Umami se registra aquí mismo.
+window.addEventListener('click', (e) => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a || (a.target && a.target !== '_self') || a.hasAttribute('download')) return;
+    const href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || /^(mailto|tel|javascript):/i.test(href)) return;
+    const u = new URL(a.href, window.location.href);
+    if (u.origin !== window.location.origin || !/(\.html|\/)$/.test(u.pathname)) return;
+    if (u.pathname === window.location.pathname && u.hash) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const ev = a.getAttribute('data-umami-event');
+    if (ev && window.umami && typeof window.umami.track === 'function') {
+        const data = {};
+        Array.from(a.attributes).forEach(at => { if (at.name.indexOf('data-umami-event-') === 0) data[at.name.slice(17)] = at.value; });
+        try { window.umami.track(ev, data); } catch (err) { /* nada */ }
+    }
+    navigateTo((u.pathname.split('/').pop() || 'index.html') + u.search + u.hash);
+}, true);
 
 
 // ── FUNCIÓN PARA CARGAR EL FAVICON ──
@@ -246,7 +267,7 @@ if (document.readyState === 'loading') {
 (function loadSox() {
     if (document.querySelector('script[data-sox]')) return;
     const s = document.createElement('script');
-    s.src = 'JS/sox.js?v=7';
+    s.src = 'JS/sox.js?v=11';
     s.defer = true;
     s.setAttribute('data-sox', '1');
     document.head.appendChild(s);

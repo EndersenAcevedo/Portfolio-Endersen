@@ -175,7 +175,8 @@
     track('sox-navegar', { destino: target });
     setTimeout(() => {
       if (target === '__back__') {
-        if (history.length > 1) history.back(); else location.href = 'inicio.html';
+        if (typeof window.goBackSmooth === 'function') window.goBackSmooth();
+        else if (history.length > 1) history.back(); else location.href = 'inicio.html';
         return;
       }
       if (/^https?:/i.test(target)) { window.open(target, '_blank', 'noopener'); return; }

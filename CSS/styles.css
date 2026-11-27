@@ -637,3 +637,9 @@ section {
   color: var(--orange);
   flex-shrink: 0;
 }
+
+/* ── Transición de entrada de página (misma en todo el sitio) ── */
+html { background: #0B1626; }
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: pageIn .35s ease-out both; }
+@media (prefers-reduced-motion: reduce) { body { animation-duration: .01s; } }

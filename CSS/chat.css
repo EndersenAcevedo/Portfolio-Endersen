@@ -102,3 +102,9 @@ a { color: #FF8A47; }
   .ch-beam, .ch-face, .ch-bar i, .ch-typing span { animation: none; }
   .ch-bar i { width: 100%; }
 }
+
+/* ── Transición de entrada de página (misma en todo el sitio) ── */
+html { background: #0B1626; }
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: pageIn .35s ease-out both; }
+@media (prefers-reduced-motion: reduce) { body { animation-duration: .01s; } }
