@@ -279,6 +279,7 @@ if (document.readyState === 'loading') {
     const lastVisit   = sessionStorage.getItem(STORAGE_KEY);
     const now         = Date.now();
 
+    if (typeof WEBHOOK_VISIT === 'undefined' || !WEBHOOK_VISIT) return; // sin config.js (desarrollo)
     if (lastVisit && (now - parseInt(lastVisit)) < COOLDOWN_MS) return;
 
     sessionStorage.setItem(STORAGE_KEY, now.toString());
