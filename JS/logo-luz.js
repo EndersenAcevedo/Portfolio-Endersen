@@ -19,6 +19,7 @@
     const ctx = cv.getContext('2d');
     const SX = 432;                 // eje vertical del logo (coordenadas del SVG)
     const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const NO_EXT = root.getAttribute('data-luz-ext') === 'off';
     let k = 0.2, offX = 0, offY = 0, dpr = 1;
 
     class Fiber {
@@ -45,7 +46,7 @@
 
     function makeAmb() {
       const a = []; if (reduce) return a;
-      baseF.concat([ext]).forEach(f => { const n = Math.max(1, Math.round(f.t / 300)); for (let i = 0; i < n; i++) a.push({ f, s: Math.random() * f.t, v: 160 + Math.random() * 140, r: 1 + Math.random() * .8 }); });
+      (NO_EXT ? baseF : baseF.concat([ext])).forEach(f => { const n = Math.max(1, Math.round(f.t / 300)); for (let i = 0; i < n; i++) a.push({ f, s: Math.random() * f.t, v: 160 + Math.random() * 140, r: 1 + Math.random() * .8 }); });
       return a;
     }
     function measure() {
@@ -62,7 +63,8 @@
         const b = el.getBoundingClientRect();
         return { y: toY(b.top - cr.top + Math.min(b.height, 60) / 2), lit: !!lit[i] || reduce };
       });
-      extEnd = pageNodes.length ? pageNodes[pageNodes.length - 1].y : toY(cr.height - 120);
+      // Sin hilo largo cuando la página lo pide (data-luz-ext="off"): solo el logo.
+      extEnd = NO_EXT ? D.bot : (pageNodes.length ? pageNodes[pageNodes.length - 1].y : toY(cr.height - 120));
       ext = new Fiber([[SX, D.bot], [SX, extEnd]]);
       amb = makeAmb();
     }
@@ -82,8 +84,8 @@
         ctx.setTransform(k * dpr, 0, 0, k * dpr, (offX - 60 * k) * dpr, (offY + 90 * k) * dpr);
         ctx.lineCap = 'round';
         // la línea de la página, con las mismas tres capas del eje del logo
-        ctx.save(); ctx.shadowColor = 'rgba(255,90,10,0.9)'; ctx.shadowBlur = 14 * dpr; line(16, 'rgba(255,90,10,0.5)'); ctx.restore();
-        line(7, '#FF6A1A'); line(2, 'rgba(255,226,204,0.9)');
+        if (!NO_EXT) { ctx.save(); ctx.shadowColor = 'rgba(255,90,10,0.9)'; ctx.shadowBlur = 14 * dpr; line(16, 'rgba(255,90,10,0.5)'); ctx.restore();
+        line(7, '#FF6A1A'); line(2, 'rgba(255,226,204,0.9)'); }
         // nodos de las secciones
         pageNodes.forEach(n => {
           if (n.lit) glow(SX, n.y, 120, .55);
@@ -120,7 +122,7 @@
       go(D.serpent, 3200, .9);
       await go(R.out, 1700, 1.1);
       // la luz sale del logo y baja por la página encendiendo cada sección
-      await go(ext, 3600, 1.4, y => pageNodes.forEach(n => { if (!n.lit && y >= n.y) n.lit = true; }));
+      if (!NO_EXT) await go(ext, 3600, 1.4, y => pageNodes.forEach(n => { if (!n.lit && y >= n.y) n.lit = true; }));
       await sleep(2600);
       run();
     }
