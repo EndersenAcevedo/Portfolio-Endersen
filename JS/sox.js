@@ -176,7 +176,7 @@
 
     if (!document.querySelector('link[data-sox-css]')) {
       const l = document.createElement('link');
-      l.rel = 'stylesheet'; l.href = 'CSS/sox.css?v=1'; l.setAttribute('data-sox-css', '1');
+      l.rel = 'stylesheet'; l.href = 'CSS/sox.css?v=2'; l.setAttribute('data-sox-css', '1');
       document.head.appendChild(l);
     }
 

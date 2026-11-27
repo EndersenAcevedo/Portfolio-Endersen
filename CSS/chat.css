@@ -1,4 +1,6 @@
 /* ── Página principal: chat con Sox ── */
+/* Por si un navegador usa un navbar.js viejo en caché: esta página no lleva barra. */
+.nav-principal { display: none !important; }
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; }
 body {
