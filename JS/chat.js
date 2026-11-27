@@ -89,6 +89,10 @@
     chipsBox.appendChild(b);
   });
 
+  // Desvanece el borde de arriba solo cuando hay mensajes ocultos por el scroll.
+  log.addEventListener('scroll', () => log.classList.toggle('ch-scrolled', log.scrollTop > 4));
+  new MutationObserver(() => log.classList.toggle('ch-scrolled', log.scrollTop > 4)).observe(log, { childList: true, subtree: true, characterData: true });
+
   form.addEventListener('submit', e => { e.preventDefault(); const v = input.value; input.value = ''; send(v); });
 
   setTimeout(() => {

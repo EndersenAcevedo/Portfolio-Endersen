@@ -15,10 +15,10 @@ a { color: #FF8A47; }
 
 .ch-top { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 20px 28px; }
 .ch-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.ch-brand img { width: 22px; height: auto; }
+.ch-brand img { width: auto; height: 48px; filter: drop-shadow(0 0 10px rgba(255,106,26,.45)); }
 .ch-brand-txt { display: flex; flex-direction: column; line-height: 1; }
-.ch-word { font-family: 'Bricolage Grotesque', sans-serif; font-stretch: 78%; font-variation-settings: 'wdth' 78; font-size: 24px; font-weight: 800; color: #FFFFFF; }
-.ch-tag { font-size: 9px; letter-spacing: .42em; color: #FF6A1A; margin-top: 4px; }
+.ch-word { font-family: 'Bricolage Grotesque', sans-serif; font-stretch: 78%; font-variation-settings: 'wdth' 78; font-size: 32px; font-weight: 800; color: #FFFFFF; }
+.ch-tag { font-size: 11px; letter-spacing: .42em; color: #FF6A1A; margin-top: 5px; }
 .ch-enter {
   display: inline-flex; align-items: center; gap: 8px; color: #E5E9F0; text-decoration: none;
   font-size: 14px; font-weight: 600; border: 1px solid #3A4C70; border-radius: 999px; padding: 10px 18px;
@@ -47,7 +47,8 @@ a { color: #FF8A47; }
 .ch-log::-webkit-scrollbar-thumb { background: rgba(154,166,186,.3); border-radius: 6px; }
 .ch-log::-webkit-scrollbar-thumb:hover { background: rgba(255,106,26,.6); }
 .ch-log::-webkit-scrollbar-button { display: none; height: 0; }
-.ch-log { padding-right: 8px; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18px); mask-image: linear-gradient(to bottom, transparent 0, #000 18px); }
+.ch-log { padding-right: 8px; }
+.ch-log.ch-scrolled { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18px); mask-image: linear-gradient(to bottom, transparent 0, #000 18px); }
 .ch-msg { max-width: 85%; padding: 10px 14px; font-size: 15px; line-height: 1.5; word-wrap: break-word; }
 .ch-bot { align-self: flex-start; background: #FFFFFF; color: #0B1626; border-radius: 16px 16px 16px 4px; }
 .ch-user { align-self: flex-end; background: #FF6A1A; color: #1A0A02; border-radius: 16px 16px 4px 16px; font-weight: 500; }
@@ -74,6 +75,9 @@ a { color: #FF8A47; }
 .ch-form button { flex: none; width: 48px; height: 48px; border: 0; border-radius: 12px; background: #FF6A1A; color: #1A0A02; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .ch-form:focus-within { box-shadow: 0 0 0 3px rgba(255,106,26,.45), 0 12px 40px rgba(0,0,0,.35); }
 .ch-note { margin: 0; font-size: 12px; color: #7D8AA3; text-align: center; }
+.ch-slogan { margin: 6px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-stretch: 78%; font-variation-settings: 'wdth' 78; font-size: 26px; font-weight: 800; color: #FFFFFF; text-align: center; letter-spacing: .01em; }
+.ch-slogan span { color: #FF6A1A; }
+.ch-conversando .ch-slogan { display: none; }
 .ch-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 /* al conversar, Sox se hace más pequeño para dar espacio al chat */
