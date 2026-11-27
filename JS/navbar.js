@@ -246,7 +246,7 @@ if (document.readyState === 'loading') {
 (function loadSox() {
     if (document.querySelector('script[data-sox]')) return;
     const s = document.createElement('script');
-    s.src = 'JS/sox.js?v=2';
+    s.src = 'JS/sox.js?v=3';
     s.defer = true;
     s.setAttribute('data-sox', '1');
     document.head.appendChild(s);

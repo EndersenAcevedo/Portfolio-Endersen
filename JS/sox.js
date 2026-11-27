@@ -78,6 +78,8 @@
   const KEY_POS = 'sox_pos_v1';
   const KEY_IA = 'sox_ia_count_v1';
   const MAX_IA_PER_SESSION = 15;
+  const KEY_BASIC = 'sox_basico_hasta_v1';
+  const BASIC_MSG = 'Ese tipo de preguntas no las puedo responder por ahora, pero te llevo a donde quieras: Proyectos, Servicios, Contacto o el perfil de Daniel.';
 
   const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
@@ -122,15 +124,16 @@
 
     const webhook = (typeof SOX_WEBHOOK !== 'undefined') ? SOX_WEBHOOK : '';
     const used = store.get(KEY_IA, 0);
-    if (!webhook || used >= MAX_IA_PER_SESSION) {
-      return { mensaje: 'Puedo llevarte a Proyectos, Servicios, Contacto o al perfil de Daniel. ¿A cuál vamos?' };
+    // Modo básico: sin IA (no hay webhook, se agotó el cupo o el servidor falló hace poco).
+    if (!webhook || used >= MAX_IA_PER_SESSION || Date.now() < store.get(KEY_BASIC, 0)) {
+      return { mensaje: BASIC_MSG };
     }
     store.set(KEY_IA, used + 1);
     track('sox-pregunta-ia', { pagina: current });
 
     const hist = (history || []).slice(-4).map(m => ({ rol: m.from === 'user' ? 'usuario' : 'sox', texto: String(m.text || '').slice(0, 200) }));
     const ctrl = ('AbortController' in window) ? new AbortController() : null;
-    const timer = setTimeout(() => ctrl && ctrl.abort(), 12000);
+    const timer = setTimeout(() => ctrl && ctrl.abort(), 8000);
     try {
       const res = await fetch(webhook, {
         method: 'POST',
@@ -143,7 +146,9 @@
       if (ans) return ans;
       throw new Error('respuesta vacía');
     } catch (e) {
-      return { mensaje: 'Ahora no pude pensar la respuesta, pero te puedo llevar a Proyectos, Servicios o Contacto.' };
+      // El servidor no respondió: Sox pasa a modo básico 5 minutos para no hacer esperar al visitante.
+      store.set(KEY_BASIC, Date.now() + 5 * 60 * 1000);
+      return { mensaje: BASIC_MSG };
     } finally {
       clearTimeout(timer);
     }
