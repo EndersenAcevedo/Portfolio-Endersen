@@ -189,12 +189,17 @@
   [IMG.talk, IMG.happy].forEach(src => { const i = new Image(); i.src = src; }); // precarga: sin parpadeo
 
   // Mueve la boca de Sox alternando las caras mientras escribe o habla.
-  function mouth(img, on) {
-    if (!img) return;
-    clearInterval(img._soxTalk);
-    if (!on || REDUCE) { img.src = IMG.smile; return; }
-    let open = false;
-    img._soxTalk = setInterval(() => { open = !open; img.src = open ? IMG.talk : IMG.smile; }, 170);
+  // Acepta una imagen o una lista de imágenes (botón flotante y cabecera del chat).
+  // Con "reducir movimiento" activado no alterna: muestra la cara de hablar fija mientras habla.
+  function mouth(imgs, on) {
+    (Array.isArray(imgs) ? imgs : [imgs]).forEach(img => {
+      if (!img) return;
+      clearInterval(img._soxTalk);
+      if (!on) { img.src = IMG.smile; return; }
+      if (REDUCE) { img.src = IMG.talk; return; }
+      let open = false;
+      img._soxTalk = setInterval(() => { open = !open; img.src = open ? IMG.talk : IMG.smile; }, 170);
+    });
   }
 
   // Escribe el texto poco a poco (efecto de que Sox lo va diciendo).
@@ -259,7 +264,7 @@
     document.body.appendChild(root);
 
     const fab = root.querySelector('.sox-fab');
-    const face = root.querySelector('.sox-face');
+    const face = [root.querySelector('.sox-face'), root.querySelector('.sox-head img')];
     const panel = root.querySelector('.sox-panel');
     const log = root.querySelector('.sox-log');
     const chipsBox = root.querySelector('.sox-chips');
