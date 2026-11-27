@@ -187,6 +187,7 @@ form.addEventListener('submit', async (e) => {
 
     if (response.ok) {
       showFeedback('✓ ¡Mensaje enviado! Te responderé en menos de 24 horas.', true);
+      if (window.umami && typeof umami.track === 'function') umami.track('formulario-contacto-enviado');
       form.reset();
       charsEl.textContent = '0';
       document.querySelectorAll('.ct-input').forEach(i => i.classList.remove('valid','error'));
