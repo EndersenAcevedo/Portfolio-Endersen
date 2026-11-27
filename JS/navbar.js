@@ -72,7 +72,7 @@ function loadNavbar() {
     const navHTML = `
     <nav class="nav-principal">
       <button class="nav-logo" onclick="navigateTo('index.html')">
-        <img src="asset/nav-logo-orange-160.png" alt="Endanus" class="nav-logo-badge">
+        <img src="asset/sox/epsilon-nav.png?v=5" alt="Endanus" class="nav-logo-badge" width="30" height="40">
         <span class="nav-logo-name">Daniel Acevedo</span>
       </button>
       <div class="nav-links">
@@ -246,7 +246,7 @@ if (document.readyState === 'loading') {
 (function loadSox() {
     if (document.querySelector('script[data-sox]')) return;
     const s = document.createElement('script');
-    s.src = 'JS/sox.js?v=5';
+    s.src = 'JS/sox.js?v=6';
     s.defer = true;
     s.setAttribute('data-sox', '1');
     document.head.appendChild(s);
