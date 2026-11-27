@@ -19,14 +19,13 @@
 
   let msgs = [];
   let busy = false;
-  let talkTimer = null;
 
-  function render(goTo) {
+  function render(goTo, typingLast) {
     log.innerHTML = '';
-    msgs.forEach(m => {
+    msgs.forEach((m, i) => {
       const b = document.createElement('div');
       b.className = 'ch-msg ' + (m.from === 'user' ? 'ch-user' : 'ch-bot');
-      b.textContent = m.text;
+      b.textContent = (typingLast && i === msgs.length - 1) ? '' : m.text;
       log.appendChild(b);
     });
     if (goTo) {
@@ -47,19 +46,23 @@
     log.scrollTop = log.scrollHeight;
   }
 
-  function talk() {
-    face.src = S.IMG.talk;
-    clearTimeout(talkTimer);
-    talkTimer = setTimeout(() => { face.src = S.IMG.smile; }, 1600);
-  }
+
 
   // La conversación se guarda para que el Sox flotante la continúe en la otra página.
   function keep() { S.saveChat(msgs); }
 
+  // Sox dice el mensaje: lo escribe poco a poco mientras mueve la boca.
   function soxSays(text, target) {
     msgs.push({ from: 'sox', text });
-    keep(); talk(); render(target);
-    if (target) S.go(target, 1700);
+    keep();
+    render(null, true);
+    const bubbles = log.querySelectorAll('.ch-bot');
+    const last = bubbles[bubbles.length - 1];
+    S.mouth(face, true);
+    S.typeText(last, text, () => { log.scrollTop = log.scrollHeight; }, () => {
+      S.mouth(face, false);
+      if (target) { render(target); S.go(target, 1300); }
+    });
   }
 
   async function send(q) {
@@ -67,10 +70,10 @@
     if (!q || busy) return;
     msgs.push({ from: 'user', text: q.slice(0, 200) });
     document.body.classList.add('ch-conversando');
-    busy = true; render();
+    busy = true; render(); S.mouth(face, true);
     const ans = await S.ask(q, msgs.slice(0, -1));
     busy = false;
-    if (ans) soxSays(ans.mensaje, ans.ir_a); else render();
+    if (ans) soxSays(ans.mensaje, ans.ir_a); else { S.mouth(face, false); render(); }
   }
 
   CHIPS.forEach(c => {
@@ -89,7 +92,6 @@
   form.addEventListener('submit', e => { e.preventDefault(); const v = input.value; input.value = ''; send(v); });
 
   setTimeout(() => {
-    msgs.push({ from: 'sox', text: '¡Hola! Pregúntame o toca una opción y te llevo directo a esa página.' });
-    talk(); render();
+    soxSays('¡Hola! Pregúntame o toca una opción y te llevo directo a esa página.');
   }, 400);
 })();

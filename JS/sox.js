@@ -185,7 +185,32 @@
 
   function chipsFor(page) { return CHIPS[page] || CHIPS._default; }
 
-  window.SoxCore = { ask, go, track, loadChat, saveChat, chipsFor, PAGES, IMG, current };
+  const REDUCE = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  [IMG.talk, IMG.happy].forEach(src => { const i = new Image(); i.src = src; }); // precarga: sin parpadeo
+
+  // Mueve la boca de Sox alternando las caras mientras escribe o habla.
+  function mouth(img, on) {
+    if (!img) return;
+    clearInterval(img._soxTalk);
+    if (!on || REDUCE) { img.src = IMG.smile; return; }
+    let open = false;
+    img._soxTalk = setInterval(() => { open = !open; img.src = open ? IMG.talk : IMG.smile; }, 170);
+  }
+
+  // Escribe el texto poco a poco (efecto de que Sox lo va diciendo).
+  function typeText(el, text, onStep, done) {
+    if (REDUCE) { el.textContent = text; if (done) done(); return; }
+    let i = 0;
+    const chunk = Math.max(1, Math.round(text.length / 70));
+    (function step() {
+      i = Math.min(text.length, i + chunk);
+      el.textContent = text.slice(0, i);
+      if (onStep) onStep();
+      if (i < text.length) setTimeout(step, 24); else if (done) done();
+    })();
+  }
+
+  window.SoxCore = { ask, go, track, loadChat, saveChat, chipsFor, mouth, typeText, PAGES, IMG, current };
 
   /* ============================================================
      WIDGET FLOTANTE
@@ -197,7 +222,7 @@
 
     if (!document.querySelector('link[data-sox-css]')) {
       const l = document.createElement('link');
-      l.rel = 'stylesheet'; l.href = 'CSS/sox.css?v=4'; l.setAttribute('data-sox-css', '1');
+      l.rel = 'stylesheet'; l.href = 'CSS/sox.css?v=5'; l.setAttribute('data-sox-css', '1');
       document.head.appendChild(l);
     }
 
@@ -245,7 +270,6 @@
     let msgs = loadChat();
     let showAllChips = false;
     let busy = false;
-    let talkTimer = null;
 
     // ── posición en esquinas ──
     const CORNERS = ['br', 'bl', 'tr', 'tl'];
@@ -259,12 +283,12 @@
     applyCorner();
 
     // ── conversación ──
-    function render() {
+    function render(typingLast) {
       log.innerHTML = '';
-      msgs.forEach(m => {
+      msgs.forEach((m, i) => {
         const b = document.createElement('div');
         b.className = 'sox-msg ' + (m.from === 'user' ? 'sox-user' : 'sox-bot');
-        b.textContent = m.text;
+        b.textContent = (typingLast && i === msgs.length - 1) ? '' : m.text;
         log.appendChild(b);
       });
       if (busy) {
@@ -295,14 +319,16 @@
       }
     }
     function push(from, text) { msgs.push({ from, text }); saveChat(msgs); render(); }
-    function talk() {
-      face.src = IMG.talk;
-      clearTimeout(talkTimer);
-      talkTimer = setTimeout(() => { face.src = IMG.smile; }, 1600);
-    }
+    // Sox dice el mensaje: lo escribe poco a poco mientras mueve la boca.
     function soxSays(text, target) {
-      push('sox', text); talk();
-      if (target) go(target);
+      msgs.push({ from: 'sox', text }); saveChat(msgs);
+      render(true);
+      const last = log.lastElementChild;
+      mouth(face, true);
+      typeText(last, text, () => { log.scrollTop = log.scrollHeight; }, () => {
+        mouth(face, false);
+        if (target) go(target, 700);
+      });
     }
     function pickChip(c) {
       track('sox-opcion', { opcion: c.label, pagina: current });
@@ -315,10 +341,10 @@
       q = q.trim();
       if (!q || busy) return;
       push('user', q.slice(0, 200));
-      busy = true; render();
+      busy = true; render(); mouth(face, true);
       const ans = await ask(q, msgs.slice(0, -1));
       busy = false;
-      if (ans) soxSays(ans.mensaje, ans.ir_a); else render();
+      if (ans) soxSays(ans.mensaje, ans.ir_a); else { mouth(face, false); render(); }
     }
 
     // ── abrir / cerrar / minimizar ──
@@ -327,10 +353,9 @@
       const greeted = store.get(KEY_GREET, []);
       if (greeted.indexOf(current) < 0) {
         greeted.push(current); store.set(KEY_GREET, greeted);
-        push('sox', current === 'inicio.html'
+        soxSays(current === 'inicio.html'
           ? '¡Hola! Soy Sox. Te llevo a cualquier parte del sitio.'
           : 'Estás en ' + pageName + '. ¿Te ayudo a ir a otro lugar?');
-        talk();
       } else { render(); }
       renderChips();
       track('sox-abrir', { pagina: current });

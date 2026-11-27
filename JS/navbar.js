@@ -49,9 +49,9 @@ function navigateTo(url) {
 // ── FUNCIÓN PARA CARGAR EL FAVICON ──
 function loadFavicon() {
     const favicons = [
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'asset/favicon-32.png' },
-        { rel: 'icon', type: 'image/png', sizes: '64x64', href: 'asset/favicon-64.png' },
-        { rel: 'apple-touch-icon', href: 'asset/logo-512.png' }
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'asset/sox/favicon-32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '64x64', href: 'asset/sox/favicon-64.png' },
+        { rel: 'apple-touch-icon', href: 'asset/sox/favicon-180.png' }
     ];
 
     favicons.forEach(iconData => {
@@ -246,7 +246,7 @@ if (document.readyState === 'loading') {
 (function loadSox() {
     if (document.querySelector('script[data-sox]')) return;
     const s = document.createElement('script');
-    s.src = 'JS/sox.js?v=4';
+    s.src = 'JS/sox.js?v=5';
     s.defer = true;
     s.setAttribute('data-sox', '1');
     document.head.appendChild(s);
